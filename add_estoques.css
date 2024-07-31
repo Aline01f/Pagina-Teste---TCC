@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+}
+.form-group {
+    margin: 15px 0;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], input[type="number"], button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #218838;
+}
+.admin-section {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: rgba(131, 42, 233, 1);
+}
+
+.admin-container {
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.update-stock {
+    background: linear-gradient(
+        90deg,
+        rgba(86, 179, 233, 1) 16%,
+        rgba(131, 42, 233, 1) 75%
+    );
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-stock:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(86, 179, 233, 1) 16%,
+        rgba(131, 42, 233, 1) 75%
+    );
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td img {
+    max-width: 100px;
+    height: auto;
+}
