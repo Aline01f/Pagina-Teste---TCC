@@ -16,24 +16,62 @@ document.querySelector('#btnSignup')
     btnColor.style.left = "110px";
 });
 
+// login.js
 function logar(event) {
-  event.preventDefault(); // Previnir variaveis
+  event.preventDefault(); // Impede o envio padrão do formulário
 
-  var loginEmail = document.getElementById('loginEmail').value;
-  var loginPassword = document.getElementById('loginPassword').value;
+  var email = document.getElementById('loginEmail').value;
+  var senha = document.getElementById('loginPassword').value;
 
-  var signupEmail = document.getElementById('signupEmail').value;
-  var signupPassword = document.getElementById('signupPassword').value;
-  var signupPasswordConfirm = document.getElementById('signupPasswordConfirm').value;
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "login.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-  // Verifica se o email e a senha do login correspondem ao cadastro
-  if (loginEmail === signupEmail && loginPassword === signupPassword) {
-    alert('Sucesso');
-    // Save data to local storage or session storage
-    localStorage.setItem('email', loginEmail);
-    // Redirecionar página login para a pagina loading
-    window.location.href = "loading.html";
-  } else {
-    alert('Usuario ou senha incorretos');
-  }
+  xhr.onload = function () {
+      if (xhr.status == 200) {
+          if (xhr.responseText.trim() === "Login realizado com sucesso!") {
+              // Redirecionar para loading.html
+              window.location.href = "loading.html";
+          } else {
+              alert(xhr.responseText); // Exibir mensagem de erro
+          }
+      } else {
+          alert("Erro ao tentar logar.");
+      }
+  };
+
+  xhr.send("email=" + encodeURIComponent(email) + "&senha=" + encodeURIComponent(senha));
 }
+
+
+
+
+function cadastrar(event) {
+  event.preventDefault();
+
+  var nome = document.getElementById('signupNome').value;
+  var email = document.getElementById('signupEmail').value;
+  var senha = document.getElementById('signupPassword').value;
+  var senhaConfirmacao = document.getElementById('signupPasswordConfirm').value;
+
+  if (senha !== senhaConfirmacao) {
+    alert("As senhas não coincidem.");
+    return;
+  }
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "../cadastrar.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      alert(xhr.responseText);
+      if (xhr.responseText === "Cadastro realizado com sucesso!") {
+        window.location.href = "login.html";
+      }
+    }
+  };
+  xhr.send("nome=" + encodeURIComponent(nome) +
+           "&email=" + encodeURIComponent(email) +
+           "&senha=" + encodeURIComponent(senha));
+}
+

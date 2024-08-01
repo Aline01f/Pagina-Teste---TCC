@@ -25,7 +25,7 @@ body {
   background-color: rgb(245, 245, 245);
   padding: 6px;
   width: 350px;
-  height: 430px;
+  height: 480px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,18 +79,32 @@ input[type="password"] {
   background-color: #d3c5ec;
 }
 
-button[type="submit"] {
+.loginbutton[type="submit"] {
   background: #832ae9;
   color: white;
   border-radius: 30px;
   width: 100%;
   border: none;
   outline: none;
-  padding: 8px 0 8px 15px;
+  padding: 6px 0 6px 13px;
   font-size: 15px;
   margin-top: 30px;
   margin-left: 25px;
   cursor: pointer;
+}
+
+.cadastrarbutton[type="submit"] {
+    background: #832ae9;
+    color: white;
+    border-radius: 30px;
+    width: 85%;
+    border: none;
+    outline: none;
+    padding: 6px 0 6px 13px;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-left: 25px;
+    cursor: pointer;
 }
 .fa {
   width: 100%;
@@ -122,20 +136,22 @@ i {
   top: 36px;
   color: #000000;
 }
-.iEmail2 {
+.iNome {
   top: 38px;
   color: #000000;
 }
-
+.iEmail2{
+  top: 114px;
+}
 .iPassword {
-  top: 108px;
+  top: 115px;
 }
 
 .iPassword2 {
-  top: 182px;
+  top: 190px;
 }
 .iPassword3 {
-  top: 110px;
+  top: 267px;
 }
 input[placeholder="Email"]::placeholder {
   color: #8d42ca;
