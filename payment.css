@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Reset básico para remover margens e paddings padrões */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ececec;
+}
+
+.logo {
+  width: 170px;
+}
+
+header {
+  width: 100vw;
+  height: 140px;
+  background: linear-gradient(
+    90deg,
+    rgba(86, 179, 233, 1) 16%,
+    rgba(131, 42, 233, 1) 75%
+  );
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+.title-text {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+span {
+  color: rgb(75, 75, 75);
+  font-weight: 500;
+}
+
+.content-button {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+#method-payment,
+#request {
+  font-size: 23px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: black;
+}
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.accordion {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.card {
+  border: 1px solid #c2c2c2;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.card.selected {
+  border: 1px solid black;
+  border-bottom: 2px solid black;
+}
+
+.card-header {
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 15px;
+}
+
+.card-body p {
+  margin-bottom: 15px;
+}
+
+#credit-card-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.request-title {
+  display: flex;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#edit {
+  font-size: 17px;
+  letter-spacing: 3px;
+}
+
+#edit a {
+  color: black;
+  font-weight: 550;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 60px;
+  margin-right: 60px;
+  gap: 30px;
+}
+
+img {
+  width: 90px;
+  padding: 7px;
+}
+
+#checkout {
+  width: 100%;
+  max-width: 550px;
+  display: block;
+  padding: 1rem;
+  background: linear-gradient(
+    90deg,
+    rgba(86, 179, 233, 1) 16%,
+    rgba(131, 42, 233, 1) 75%
+  );
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  margin-top: 30px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 2rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+body > main .container aside {
+  min-width: 250px;
+}
+
+.request {
+  max-width: 600px;
+}
+
+.request-info {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  background-color: #eeeeee;
+  border-radius: 8px;
+  padding: 7px;
+}
+
+.request-info-text {
+  padding-left: 10px;
+}
