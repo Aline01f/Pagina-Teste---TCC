@@ -5,74 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/estoque.css" />
     <title>Administração de Estoque</title>
-
 </head>
 <body>
-<!-- Página de Administração de Estoque -->
-<section id="admin" class="admin-section">
-    <h2>Administração de Estoque</h2>
-    <div class="admin-container">
-        <!-- Formulário para Adicionar Produtos -->
-        <div class="form-group">
-            <h3>Adicionar Produto</h3>
-            <label for="addProductId">ID do Produto:</label>
-            <input type="text" id="addProductId" placeholder="Digite o ID do produto">
-            <label for="addProductName">Nome do Produto:</label>
-            <input type="text" id="addProductName" placeholder="Digite o nome do produto">
-            <label for="addProductQuantity">Quantidade:</label>
-            <input type="number" id="addProductQuantity" placeholder="Digite a quantidade">
-            <label for="addProductImage">Imagem do Produto:</label>
-            <input type="file" id="addProductImage" accept="image/*">
-            <button class="update-stock" onclick="addProduct()">Adicionar Produto</button>
+    <!-- Página de Administração de Estoque -->
+    <section id="admin" class="admin-section">
+        <h2>Administração de Estoque</h2>
+        <div class="admin-container">
+            <!-- Formulário para Adicionar Produtos -->
+            <div class="form-group">
+                <h3>Adicionar Produto</h3>
+                <form id="addProductForm" enctype="multipart/form-data">
+                    <label for="addProductId">ID do Produto:</label>
+                    <input type="text" id="addProductId" name="id" placeholder="Digite o ID do produto">
+                    <label for="addProductName">Nome do Produto:</label>
+                    <input type="text" id="addProductName" name="nome" placeholder="Digite o nome do produto">
+                    <label for="addProductQuantity">Quantidade:</label>
+                    <input type="number" id="addProductQuantity" name="quantidade" placeholder="Digite a quantidade">
+                    <label for="addProductImage">Imagem do Produto:</label>
+                    <input type="file" id="addProductImage" name="imagem" accept="image/*">
+                    <button class="update-stock" type="submit">Adicionar Produto</button>
+                </form>
+            </div>
+
+            <!-- Formulário para Remover Produtos -->
+            <div class="form-group">
+                <h3>Remover Produto</h3>
+                <form id="removeProductForm">
+                    <label for="removeProductId">ID do Produto:</label>
+                    <input type="text" id="removeProductId" name="id" placeholder="Digite o ID do produto">
+                    <button class="update-stock" type="submit">Remover Produto</button>
+                </form>
+            </div>
+
+            <!-- Formulário para Atualizar Quantidade -->
+            <div class="form-group">
+                <h3>Atualizar Quantidade</h3>
+                <form id="updateStockForm">
+                    <label for="updateProductId">ID do Produto:</label>
+                    <input type="text" id="updateProductId" name="id" placeholder="Digite o ID do produto">
+                    <label for="updateProductQuantity">Quantidade:</label>
+                    <input type="number" id="updateProductQuantity" name="quantidade" placeholder="Digite a quantidade">
+                    <button class="update-stock" type="submit">Atualizar Estoque</button>
+                </form>
+            </div>
+
+            <!-- Formulário para Atualizar Imagem -->
+            <div class="form-group">
+                <h3>Atualizar Imagem do Produto</h3>
+                <form id="updateImageForm" enctype="multipart/form-data">
+                    <label for="updateImageProductId">ID do Produto:</label>
+                    <input type="text" id="updateImageProductId" name="id" placeholder="Digite o ID do produto">
+                    <label for="updateProductImage">Nova Imagem:</label>
+                    <input type="file" id="updateProductImage" name="imagem" accept="image/*">
+                    <button class="update-stock" type="submit">Atualizar Imagem</button>
+                </form>
+            </div>
+
+            <h3>Produtos em Estoque</h3>
+            <table id="stockTable">
+                <thead>
+                    <tr>
+                        <th>ID do Produto</th>
+                        <th>Nome do Produto</th>
+                        <th>Quantidade</th>
+                        <th>Imagem</th>
+                        <th>Em Estoque</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas de produtos serão inseridas aqui -->
+                </tbody>
+            </table>
         </div>
-
-        <!-- Formulário para Remover Produtos -->
-        <div class="form-group">
-            <h3>Remover Produto</h3>
-            <label for="removeProductId">ID do Produto:</label>
-            <input type="text" id="removeProductId" placeholder="Digite o ID do produto">
-            <button class="update-stock" onclick="removeProduct()">Remover Produto</button>
-        </div>
-
-        <!-- Formulário para Atualizar Quantidade -->
-        <div class="form-group">
-            <h3>Atualizar Quantidade</h3>
-            <label for="updateProductId">ID do Produto:</label>
-            <input type="text" id="updateProductId" placeholder="Digite o ID do produto">
-            <label for="updateProductQuantity">Quantidade:</label>
-            <input type="number" id="updateProductQuantity" placeholder="Digite a quantidade">
-            <button class="update-stock" onclick="updateStock()">Atualizar Estoque</button>
-        </div>
-
-        <!-- Formulário para Atualizar Imagem -->
-        <div class="form-group">
-            <h3>Atualizar Imagem do Produto</h3>
-            <label for="updateImageProductId">ID do Produto:</label>
-            <input type="text" id="updateImageProductId" placeholder="Digite o ID do produto">
-            <label for="updateProductImage">Nova Imagem:</label>
-            <input type="file" id="updateProductImage" accept="image/*">
-            <button class="update-stock" onclick="updateProductImage()">Atualizar Imagem</button>
-        </div>
-
-        <h3>Produtos em Estoque</h3>
-        <table id="stockTable">
-            <thead>
-                <tr>
-                    <th>ID do Produto</th>
-                    <th>Nome do Produto</th>
-                    <th>Quantidade</th>
-                    <th>Imagem</th>
-                    <th>Em Estoque</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Linhas de produtos serão inseridas aqui -->
-            </tbody>
-        </table>
-    </div>
-</section>
-
+    </section>
 
     <script src="./js/estoque.js"></script>
 </body>
 </html>
+
+
+

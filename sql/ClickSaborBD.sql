@@ -28,3 +28,14 @@ CREATE TABLE LoginCliente (
   select * from LoginCliente;
   
 -- -----------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE produtos (
+    id VARCHAR(50) PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    categoria ENUM('salgados', 'bebidas', 'doces') NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    quantidade INT NOT NULL,
+    imagem TEXT
+);
+
+select * from produtos;
