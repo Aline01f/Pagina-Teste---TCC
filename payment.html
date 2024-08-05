@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Sabor | Payment</title>
+    <link rel="stylesheet" href="/assets/css/payment.css" />
+    <link
+      rel="shortcut icon"
+      href="/assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="/assets/img/CLICKSABOR.png" />
+    </header>
+    <div class="container">
+      <div class="title">
+        <h1 class="title-text">Finalizar Compra</h1>
+        <span>(3 produtos) R$ 14,50</span>
+      </div>
+      <main>
+        <div class="method-payment">
+          <div id="method-payment">pagamento</div>
+        </div>
+        <div class="accordion">
+          <div class="card" id="card1">
+            <div class="card-header" onclick="toggleCard('card1')">
+              Cartão de Crédito
+              <img src="/assets/img/card_img.png" />
+            </div>
+            <div class="card-body">
+              <form id="credit-card-form">
+                <div class="form-group">
+                  <label for="card-number">Número do Cartão:</label>
+                  <input
+                    type="text"
+                    id="card-number"
+                    name="card-number"
+                    placeholder="1234 5678 9123 4567"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="card-name">Nome do Titular:</label>
+                  <input
+                    type="text"
+                    id="card-name"
+                    name="card-name"
+                    placeholder="Nome Completo"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="expiry-date">Data de Validade:</label>
+                  <input
+                    type="text"
+                    id="expiry-date"
+                    name="expiry-date"
+                    placeholder="MM/AA"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="cvv">Código de Segurança (CVV):</label>
+                  <input
+                    type="text"
+                    id="cvv"
+                    name="cvv"
+                    placeholder="123"
+                    required
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card" id="card2">
+            <div class="card-header" onclick="toggleCard('card2')">
+              Pix
+              <img src="/assets/img/logo-pix-256.png" style="width: 120px" />
+            </div>
+            <div class="card-body">
+              <p>
+                Abra o app ou banco de sua preferência. Escolha a opção pagar
+                com código Pix “copia e cola”. Copie e cole o código, ou
+                escaneie o código QR com a câmera do seu celular. Confirme todas
+                as informaçōes e autorize o pagamento.
+                <br /><br /><strong>Atenção: </strong>O prazo de pagamento com
+                código ou QR é de 2 horas.
+              </p>
+            </div>
+          </div>
+          <div class="card" id="card3">
+            <div class="card-header" onclick="toggleCard('card3')">
+              Boleto
+              <img src="/assets/img/boleto.png" style="width: 84px" />
+            </div>
+            <div class="card-body">
+              <p>Informações sobre o boleto...</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <hr />
+      <div class="request">
+        <div class="request-title">
+          <div id="request">detalhes do pedido</div>
+          <div id="edit"><a href="/carrinho.html">editar</a></div>
+        </div>
+        <div class="request-info">
+          <img src="/assets/img/coxinha.png" />
+          <div class="request-info-text">
+            <strong>Coxinha de Frango</strong><br />R$4,99 <br />
+            Quantidade: 1
+          </div>
+        </div>
+        <div class="request-info">
+          <img src="/assets/img/sucokapo.png" />
+          <div class="request-info-text">
+            <strong>Suco Kapo</strong><br />R$5,50 <br />
+            Quantidade: 1
+          </div>
+        </div>
+        <div class="request-info">
+          <img src="/assets/img/empada.png" />
+          <div class="request-info-text">
+            <strong>Empada de Frango</strong><br />R$4,50 <br />
+            Quantidade: 1
+          </div>
+        </div>
+      </div>
+
+      <button id="checkout">Finalizar Compra</button>
+    </div>
+
+    <script src="/assets/script/payment.js"></script>
+  </body>
+</html>
