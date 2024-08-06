@@ -22,8 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         if ($action === 'add') {
             $id = $_POST['id'];
             $nome = $_POST['nome'];
+            $categoria = $_POST['categoria'];
+            $preco = $_POST['preco'];
             $quantidade = $_POST['quantidade'];
             $imagem = '';
+
+            // Log dos dados recebidos
+            error_log("Dados recebidos para adicionar produto: id=$id, nome=$nome, categoria=$categoria, preco=$preco, quantidade=$quantidade");
 
             if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == UPLOAD_ERR_OK) {
                 $fileTmpPath = $_FILES['imagem']['tmp_name'];
@@ -42,8 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 }
             }
 
-            $stmt = $pdo->prepare('INSERT INTO produtos (id, nome, quantidade, imagem, categoria) VALUES (?, ?, ?, ?, "salgados")');
-            $stmt->execute([$id, $nome, $quantidade, $imagem]);
+            $stmt = $pdo->prepare('INSERT INTO produtos (id, nome, categoria, preco, quantidade, imagem) VALUES (?, ?, ?, ?, ?, ?)');
+            $stmt->execute([$id, $nome, $categoria, $preco, $quantidade, $imagem]);
             echo json_encode(['status' => 'success']);
         } 
 
@@ -88,6 +93,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             $stmt->execute([$imagem, $id]);
             echo json_encode(['status' => 'success']);
         }
+
+        elseif ($action === 'updatePrice') {
+            $id = $_POST['id'];
+            $preco = $_POST['preco'];
+            $stmt = $pdo->prepare('UPDATE produtos SET preco = ? WHERE id = ?');
+            $stmt->execute([$preco, $id]);
+            echo json_encode(['status' => 'success']);
+        }
         
     } catch (Exception $e) {
         echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
@@ -105,6 +118,8 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 }
 ?>
+
+
 
 
 

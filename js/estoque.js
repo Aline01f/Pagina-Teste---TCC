@@ -104,6 +104,32 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => alert('Erro na comunicação com o servidor: ' + error.message));
     });
+
+    // Atualizar Preço
+    document.getElementById('updatePriceForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        formData.append('action', 'updatePrice');
+
+        fetch('estoque.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(text => {
+            console.log(text);
+            return JSON.parse(text);
+        })
+        .then(data => {
+            if (data.status === 'success') {
+                alert('Preço atualizado com sucesso!');
+                fetchProducts();
+            } else {
+                alert('Erro ao atualizar preço.');
+            }
+        })
+        .catch(error => alert('Erro na comunicação com o servidor: ' + error.message));
+    });
 });
 
 // Função para buscar e atualizar os produtos na tabela
@@ -122,6 +148,8 @@ function fetchProducts() {
                 row.innerHTML = `
                     <td>${item.id}</td>
                     <td>${item.nome}</td>
+                    <td>${item.categoria}</td>
+                    <td>${Number(item.preco).toFixed(2)}</td>
                     <td>${item.quantidade}</td>
                     <td><img src="${item.imagem ? './uploads/' + item.imagem : 'https://via.placeholder.com/100'}" alt="${item.nome}"></td>
                     <td>${item.quantidade > 0 ? 'Sim' : 'Não'}</td>
@@ -131,5 +159,3 @@ function fetchProducts() {
         })
         .catch(error => alert('Erro na comunicação com o servidor: ' + error.message));
 }
-
-
