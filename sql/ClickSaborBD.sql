@@ -34,7 +34,7 @@ CREATE TABLE LoginCliente (
 CREATE TABLE produtos (
     id VARCHAR(50) PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    categoria ENUM('salgados', 'bebidas', 'doces') NOT NULL,
+    categoria ENUM('Salgados', 'Bebidas', 'Doces') NOT NULL,
     preco DECIMAL(10, 2) NOT NULL,
     quantidade INT NOT NULL,
     imagem TEXT
