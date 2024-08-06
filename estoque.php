@@ -23,12 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             $id = $_POST['id'];
             $nome = $_POST['nome'];
             $categoria = $_POST['categoria'];
-            $preco = $_POST['preco'];
             $quantidade = $_POST['quantidade'];
             $imagem = '';
-
-            // Log dos dados recebidos
-            error_log("Dados recebidos para adicionar produto: id=$id, nome=$nome, categoria=$categoria, preco=$preco, quantidade=$quantidade");
 
             if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == UPLOAD_ERR_OK) {
                 $fileTmpPath = $_FILES['imagem']['tmp_name'];
@@ -36,7 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 $fileNameCmps = explode(".", $fileName);
                 $fileExtension = strtolower(end($fileNameCmps));
                 
-                $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+                // Use the product name as part of the file name
+                $safeName = preg_replace('/[^a-zA-Z0-9_-]/', '', $nome); // Remove special characters
+                $newFileName = $safeName . '.' . $fileExtension;
                 $uploadFileDir = './uploads/';
                 $dest_path = $uploadFileDir . $newFileName;
 
@@ -47,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 }
             }
 
-            $stmt = $pdo->prepare('INSERT INTO produtos (id, nome, categoria, preco, quantidade, imagem) VALUES (?, ?, ?, ?, ?, ?)');
-            $stmt->execute([$id, $nome, $categoria, $preco, $quantidade, $imagem]);
+            $stmt = $pdo->prepare('INSERT INTO produtos (id, nome, categoria, quantidade, imagem) VALUES (?, ?, ?, ?, ?)');
+            $stmt->execute([$id, $nome, $categoria, $quantidade, $imagem]);
             echo json_encode(['status' => 'success']);
         } 
 
@@ -78,7 +76,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 $fileNameCmps = explode(".", $fileName);
                 $fileExtension = strtolower(end($fileNameCmps));
                 
-                $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+                // Use the product name as part of the file name
+                $stmt = $pdo->prepare('SELECT nome FROM produtos WHERE id = ?');
+                $stmt->execute([$id]);
+                $product = $stmt->fetch(PDO::FETCH_ASSOC);
+                $productName = preg_replace('/[^a-zA-Z0-9_-]/', '', $product['nome']); // Remove special characters
+                $newFileName = $productName . '.' . $fileExtension;
                 $uploadFileDir = './uploads/';
                 $dest_path = $uploadFileDir . $newFileName;
 
@@ -91,14 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 
             $stmt = $pdo->prepare('UPDATE produtos SET imagem = ? WHERE id = ?');
             $stmt->execute([$imagem, $id]);
-            echo json_encode(['status' => 'success']);
-        }
-
-        elseif ($action === 'updatePrice') {
-            $id = $_POST['id'];
-            $preco = $_POST['preco'];
-            $stmt = $pdo->prepare('UPDATE produtos SET preco = ? WHERE id = ?');
-            $stmt->execute([$preco, $id]);
             echo json_encode(['status' => 'success']);
         }
         
@@ -118,6 +113,7 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 }
 ?>
+
 
 
 
