@@ -19,6 +19,10 @@
                     <input type="text" id="addProductId" name="id" placeholder="Digite o ID do produto">
                     <label for="addProductName">Nome do Produto:</label>
                     <input type="text" id="addProductName" name="nome" placeholder="Digite o nome do produto">
+                    <label for="addProductCategory">Categoria:</label>
+                    <input type="text" id="addProductCategory" name="categoria" placeholder="Digite a categoria do produto">
+                    <label for="addProductPrice">Preço:</label>
+                    <input type="number" id="addProductPrice" name="preco" placeholder="Digite o preço do produto" step="0.01">
                     <label for="addProductQuantity">Quantidade:</label>
                     <input type="number" id="addProductQuantity" name="quantidade" placeholder="Digite a quantidade">
                     <label for="addProductImage">Imagem do Produto:</label>
@@ -61,12 +65,26 @@
                 </form>
             </div>
 
+            <!-- Formulário para Atualizar Preço -->
+            <div class="form-group">
+                <h3>Atualizar Preço do Produto</h3>
+                <form id="updatePriceForm">
+                    <label for="updatePriceProductId">ID do Produto:</label>
+                    <input type="text" id="updatePriceProductId" name="id" placeholder="Digite o ID do produto">
+                    <label for="updateProductPrice">Novo Preço:</label>
+                    <input type="number" id="updateProductPrice" name="preco" placeholder="Digite o novo preço do produto" step="0.01">
+                    <button class="update-stock" type="submit">Atualizar Preço</button>
+                </form>
+            </div>
+
             <h3>Produtos em Estoque</h3>
             <table id="stockTable">
                 <thead>
                     <tr>
                         <th>ID do Produto</th>
                         <th>Nome do Produto</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
                         <th>Quantidade</th>
                         <th>Imagem</th>
                         <th>Em Estoque</th>
@@ -82,6 +100,3 @@
     <script src="./js/estoque.js"></script>
 </body>
 </html>
-
-
-
