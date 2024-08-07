@@ -19,7 +19,7 @@ switch ($action) {
         $imagem = $_FILES['imagem']['name'] ?? null;
 
         if ($imagem) {
-            $imagemPath = '' . basename($imagem);
+            $imagemPath = './uploads/' . basename($imagem); // Corrigir o caminho
             if (!move_uploaded_file($_FILES['imagem']['tmp_name'], $imagemPath)) {
                 echo json_encode(['status' => 'error', 'message' => 'Erro ao mover o arquivo da imagem.']);
                 exit();
@@ -71,7 +71,7 @@ switch ($action) {
         $imagem = $_FILES['imagem']['name'] ?? null;
 
         if ($imagem) {
-            $imagemPath = 'uploads/' . basename($imagem);
+            $imagemPath = './uploads/' . basename($imagem); // Corrigir o caminho
             if (!move_uploaded_file($_FILES['imagem']['tmp_name'], $imagemPath)) {
                 echo json_encode(['status' => 'error', 'message' => 'Erro ao mover o arquivo da imagem.']);
                 exit();
@@ -120,6 +120,7 @@ switch ($action) {
 
 $mysqli->close();
 ?>
+
 
 
 

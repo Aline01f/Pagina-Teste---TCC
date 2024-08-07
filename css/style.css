@@ -123,6 +123,13 @@ header {
     display: block;
 }
 
+.estoque-indisponivel {
+    color: red;
+    font-size: 1.25rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
 .add-to-cart {
     background: linear-gradient(
         90deg,
@@ -170,6 +177,8 @@ header {
     justify-content: space-between;
     margin-bottom: 0.5rem;
 }
+
+
 
 @media (max-width: 768px) {
     .toggle-button {

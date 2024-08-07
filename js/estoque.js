@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 products.forEach(item => {
                     // Garantir que item.preco seja um número
                     const price = parseFloat(item.preco);
-                    const imageUrl = item.imagem ? './uploads/' + item.imagem : 'https://via.placeholder.com/100';
+                    const imageUrl = item.imagem ? './' + item.imagem : 'https://via.placeholder.com/100';
                     
                     const row = document.createElement('tr');
                     row.innerHTML = `
