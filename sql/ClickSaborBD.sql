@@ -1,8 +1,10 @@
--- Banco de dados ClickSabor
+
+-- Criar o banco de dados ClickSabor
 CREATE DATABASE ClickSaborBD
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
 
+-- Usar o banco de dados ClickSabor
 USE ClickSaborBD;
 
 -- Tabelas que recebem os dados dos usuários para cadastro e login
@@ -14,7 +16,7 @@ CREATE TABLE CadastroCliente (
 ) ENGINE=InnoDB
   DEFAULT CHARSET=utf8mb4
   COLLATE=utf8mb4_unicode_ci;
-  
+
 CREATE TABLE LoginCliente (
     LoginID INT AUTO_INCREMENT PRIMARY KEY,
     fk_ClienteID INT NOT NULL,
@@ -23,29 +25,41 @@ CREATE TABLE LoginCliente (
 ) ENGINE=InnoDB
   DEFAULT CHARSET=utf8mb4
   COLLATE=utf8mb4_unicode_ci;
-  
-  select * from CadastroCliente;
-  select * from LoginCliente;
-  
+
 -- ----------------------------------------------------------------------------------------------------------------------------------
 -- ----------------------------------------------------------------------------------------------------------------------------------
 
--- Controle de Estoque
+-- Tabela para armazenar as categorias
+CREATE TABLE categorias (
+    CategoriaID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL UNIQUE
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
+
+-- Tabela para controle de estoque
 CREATE TABLE produtos (
     id VARCHAR(50) PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    categoria ENUM('Salgados', 'Bebidas', 'Doces') NOT NULL,
+    fk_CategoriaID INT NOT NULL,
     preco DECIMAL(10, 2) NOT NULL,
     quantidade INT NOT NULL,
-    imagem TEXT
-)
-Engine InnoDB
-DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_unicode_ci;
-
-
-select * from produtos;
-describe produtos;
+    imagem TEXT,
+    FOREIGN KEY (fk_CategoriaID) REFERENCES categorias (CategoriaID) -- Estabelece a relação com categorias
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------------------------------------------------------------------------------------------------------------
 -- ----------------------------------------------------------------------------------------------------------------------------------
+
+-- Inserir categorias padrão
+INSERT INTO categorias (Nome) VALUES ('Salgados'), ('Bebidas'), ('Doces');
+
+-- ----------------------------------------------------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------------------------------------------------
+-- AValiar Tabelas
+SELECT * FROM CadastroCliente;
+SELECT * FROM LoginCliente;
+SELECT * FROM categorias;
+SELECT * FROM produtos;

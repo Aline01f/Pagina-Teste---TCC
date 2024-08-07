@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    fetchCategories();
     fetchProducts();
 
     // Adicionar Produto
@@ -11,17 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             body: formData
         })
-        .then(response => response.text()) // Use .text() para ver o conteúdo bruto
-        .then(text => {
-            console.log(text); // Verifique o conteúdo retornado
-            return JSON.parse(text); // Tente analisar o JSON manualmente
-        })
+        .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                alert('Produto adicionado com sucesso!');
+                alert(data.message);
                 fetchProducts();
             } else {
-                alert('Erro ao adicionar produto.');
+                alert(data.message);
             }
         })
         .catch(error => alert('Erro na comunicação com o servidor: ' + error.message));
@@ -37,17 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             body: formData
         })
-        .then(response => response.text())
-        .then(text => {
-            console.log(text);
-            return JSON.parse(text);
-        })
+        .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                alert('Produto removido com sucesso!');
+                alert(data.message);
                 fetchProducts();
             } else {
-                alert('Erro ao remover produto.');
+                alert(data.message);
             }
         })
         .catch(error => alert('Erro na comunicação com o servidor: ' + error.message));
@@ -63,17 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             body: formData
         })
-        .then(response => response.text())
-        .then(text => {
-            console.log(text);
-            return JSON.parse(text);
-        })
+        .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                alert('Estoque atualizado com sucesso!');
+                alert(data.message);
                 fetchProducts();
             } else {
-                alert('Erro ao atualizar estoque.');
+                alert(data.message);
             }
         })
         .catch(error => alert('Erro na comunicação com o servidor: ' + error.message));
@@ -89,17 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             body: formData
         })
-        .then(response => response.text())
-        .then(text => {
-            console.log(text);
-            return JSON.parse(text);
-        })
+        .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                alert('Imagem atualizada com sucesso!');
+                alert(data.message);
                 fetchProducts();
             } else {
-                alert('Erro ao atualizar imagem.');
+                alert(data.message);
             }
         })
         .catch(error => alert('Erro na comunicação com o servidor: ' + error.message));
@@ -115,47 +100,61 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             body: formData
         })
-        .then(response => response.text())
-        .then(text => {
-            console.log(text);
-            return JSON.parse(text);
-        })
+        .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                alert('Preço atualizado com sucesso!');
+                alert(data.message);
                 fetchProducts();
             } else {
-                alert('Erro ao atualizar preço.');
+                alert(data.message);
             }
         })
         .catch(error => alert('Erro na comunicação com o servidor: ' + error.message));
     });
+
+    function fetchCategories() {
+        fetch('estoque.php?action=categories')
+            .then(response => response.json())
+            .then(categories => {
+                const select = document.getElementById('addProductCategory');
+                select.innerHTML = ''; // Limpa as opções existentes
+                categories.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category.CategoriaID;
+                    option.textContent = category.Nome;
+                    select.appendChild(option);
+                });
+            })
+            .catch(error => alert('Erro ao carregar categorias: ' + error.message));
+    }
+
+    function fetchProducts() {
+        fetch('estoque.php')
+            .then(response => response.json())
+            .then(products => {
+                const tableBody = document.querySelector('#stockTable tbody');
+                tableBody.innerHTML = ''; // Limpa a tabela antes de adicionar novos dados
+                products.forEach(item => {
+                    // Garantir que item.preco seja um número
+                    const price = parseFloat(item.preco);
+                    const imageUrl = item.imagem ? './uploads/' + item.imagem : 'https://via.placeholder.com/100';
+                    
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${item.id}</td>
+                        <td>${item.nome}</td>
+                        <td>${item.categoria_nome}</td>
+                        <td>${isNaN(price) ? 'N/A' : price.toFixed(2)}</td>
+                        <td>${item.quantidade}</td>
+                        <td><img src="${imageUrl}" alt="${item.nome}" width="100"></td>
+                        <td>${item.quantidade > 0 ? 'Sim' : 'Não'}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => alert('Erro ao carregar produtos: ' + error.message));
+    }
 });
 
-// Função para buscar e atualizar os produtos na tabela
-function fetchProducts() {
-    fetch('estoque.php')
-        .then(response => response.text()) // Use .text() para ver o conteúdo bruto
-        .then(text => {
-            console.log(text);
-            return JSON.parse(text); // Tente analisar o JSON manualmente
-        })
-        .then(products => {
-            const tableBody = document.querySelector('#stockTable tbody');
-            tableBody.innerHTML = '';
-            products.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${item.id}</td>
-                    <td>${item.nome}</td>
-                    <td>${item.categoria}</td>
-                    <td>${Number(item.preco).toFixed(2)}</td>
-                    <td>${item.quantidade}</td>
-                    <td><img src="${item.imagem ? './uploads/' + item.imagem : 'https://via.placeholder.com/100'}" alt="${item.nome}"></td>
-                    <td>${item.quantidade > 0 ? 'Sim' : 'Não'}</td>
-                `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => alert('Erro na comunicação com o servidor: ' + error.message));
-}
+
+
