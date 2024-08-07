@@ -5,6 +5,24 @@ body {
     background-color: #f4f4f4;
 }
 
+header.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem;
+    background: linear-gradient(90deg, rgba(86, 179, 233, 1) 16%, rgba(131, 42, 233, 1) 75%);
+    color: white;
+}
+
+
+header.main-header h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+    
+}
+
 .container {
     width: 80%;
     margin: auto;
@@ -13,7 +31,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
 }
 
 table {
@@ -205,5 +223,3 @@ td img {
     max-width: 100px;
     height: auto;
 }
-
-
