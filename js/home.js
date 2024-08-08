@@ -1,4 +1,15 @@
-// Função para obter a lista de produtos do servidor
+document.addEventListener("DOMContentLoaded", function() {
+    if (!verificarUsuarioLogado()) {
+        // Exibe uma mensagem ou redireciona para a página de login
+        alert("Você precisa estar logado para acessar esta página.");
+        window.location.href = "login.html";
+    }
+});
+
+function verificarUsuarioLogado() {
+    // Verifica se o cookie da sessão PHP está presente
+    return Boolean(document.cookie.match(/^(.*;)?\s*PHPSESSID\s*=\s*[^;]+(.*)?$/));
+}// Função para obter a lista de produtos do servidor
 async function fetchProducts() {
     try {
         const response = await fetch('/api/produtos');
