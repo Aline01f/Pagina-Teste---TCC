@@ -14,7 +14,7 @@ if (!isset($_SESSION['cliente_id'])) {
 $mysqli = new mysqli("localhost", "root", "", "ClickSaborBD");
 
 if ($mysqli->connect_error) {
-    $response['message'] = 'Erro de conexão com o banco de dados';
+    $response['message'] = 'Erro de conexão com o banco de dados: ' . $mysqli->connect_error;
     echo json_encode($response);
     exit;
 }
@@ -66,5 +66,6 @@ $mysqli->close();
 // Retornar a resposta
 echo json_encode($response);
 ?>
+
 
 

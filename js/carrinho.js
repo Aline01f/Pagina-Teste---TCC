@@ -32,7 +32,7 @@ function carregarCarrinho() {
                     const quantidadeProduto = `<td>${item.quantidade}</td>`;
                     const totalItem = `<td>R$ ${(item.preco * item.quantidade).toFixed(2)}</td>`;
 
-                    // Ajustado para usar `CarrinhoID` como data-id
+                    // Ajustado para usar `carrinho_id` como data-id
                     const botaoRemover = `<td><button class="remove" data-id="${item.carrinho_id}">×</button></td>`;
 
                     row.innerHTML = nomeProduto + precoProduto + quantidadeProduto + totalItem + botaoRemover;
@@ -57,7 +57,15 @@ function carregarCarrinho() {
         .catch(error => console.error('Erro ao carregar o carrinho:', error));
 }
 
+
 function removerDoCarrinho(carrinho_id) {
+    if (!carrinho_id) {
+        console.error('ID do carrinho não fornecido para remoção.');
+        return;
+    }
+
+    console.log(`Removendo item com ID do carrinho: ${carrinho_id}`);  // Adicionado para debug
+
     fetch('remover_produto.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -65,6 +73,8 @@ function removerDoCarrinho(carrinho_id) {
     })
     .then(response => response.json())
     .then(data => {
+        console.log('Resposta do servidor ao remover item:', data);  // Adicionado para debug
+
         if (data.success) {
             carregarCarrinho();  // Recarregar o carrinho após a remoção
         } else {
@@ -73,5 +83,11 @@ function removerDoCarrinho(carrinho_id) {
     })
     .catch(error => console.error('Erro ao remover item do carrinho:', error));
 }
+
+
+
+
+
+
 
 

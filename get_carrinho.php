@@ -16,7 +16,13 @@ try {
     $pdo = new PDO($dsn, $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $pdo->prepare('SELECT p.id, p.nome, p.preco, c.quantidade FROM carrinho c JOIN produtos p ON c.fk_ProdutoID = p.id WHERE c.fk_ClienteID = :cliente_id');
+    // Ajustado para refletir o esquema da tabela 'carrinho'
+    $stmt = $pdo->prepare('
+        SELECT c.CarrinhoID AS carrinho_id, p.id AS produto_id, p.nome, p.preco, c.Quantidade AS quantidade
+        FROM carrinho c
+        JOIN produtos p ON c.fk_ProdutoID = p.id
+        WHERE c.fk_ClienteID = :cliente_id
+    ');
     $stmt->execute(['cliente_id' => $cliente_id]);
     $itens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -27,9 +33,11 @@ try {
 } catch (PDOException $e) {
     $response = [
         'success' => false,
-        'message' => 'Erro ao conectar ao banco de dados.'
+        'message' => 'Erro ao conectar ao banco de dados: ' . $e->getMessage()
     ];
 }
 
 echo json_encode($response);
 ?>
+
+
