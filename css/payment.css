@@ -12,11 +12,9 @@ body {
   background-color: #ececec;
 }
 
-.logo {
-  width: 170px;
-}
-
 header {
+  display: flex;
+  justify-content: center;
   width: 100vw;
   height: 140px;
   background: linear-gradient(
@@ -24,9 +22,11 @@ header {
     rgba(86, 179, 233, 1) 16%,
     rgba(131, 42, 233, 1) 75%
   );
-  color: white;
   padding: 1rem;
-  text-align: center;
+}
+
+.logo {
+  width: 200px;
 }
 
 .title {
@@ -150,12 +150,14 @@ hr {
   gap: 30px;
 }
 
-img {
+.img-request {
   width: 90px;
-  padding: 7px;
+  height: 90px;
 }
 
 #checkout {
+  text-transform: uppercase;
+  font-weight: 600;
   width: 100%;
   max-width: 550px;
   display: block;
@@ -169,7 +171,7 @@ img {
   border: none;
   cursor: pointer;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: background-color 0.3s;
   margin-top: 30px;
 }
@@ -180,8 +182,7 @@ button {
 
 .container {
   padding: 2rem;
-  max-width: 1400px;
-  margin: 2rem;
+  margin: 4rem;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
