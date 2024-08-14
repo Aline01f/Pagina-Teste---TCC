@@ -204,9 +204,6 @@ header {
     .navbar-links.active {
         display: flex;
     }
-
-    .logo{
-    }
 }
 
 .menu-items {
