@@ -1,3 +1,7 @@
+document.getElementById('toggleButton').addEventListener('click', function() {
+    var navbarLinks = document.getElementById('navbarLinks');
+    navbarLinks.classList.toggle('active');
+});
 document.addEventListener("DOMContentLoaded", function () {
     fetch('get_produtos.php')
         .then(response => response.text())
