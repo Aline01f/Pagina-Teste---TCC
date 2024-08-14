@@ -60,7 +60,13 @@ ID do Carrinho: 61
 ID do Carrinho: 64
 ID do Carrinho: 60
 ID do Carrinho: 59
+<<<<<<< HEAD
 ID do Carrinho: 15
 ID do Carrinho: 16
 ID do Carrinho: 17
 ID do Carrinho: 18
+=======
+ID do Carrinho: 51
+ID do Carrinho: 57
+ID do Carrinho: 66
+>>>>>>> e29fab4658bccf285455105d81af7094cc18ab67
