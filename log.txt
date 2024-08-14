@@ -60,3 +60,7 @@ ID do Carrinho: 61
 ID do Carrinho: 64
 ID do Carrinho: 60
 ID do Carrinho: 59
+ID do Carrinho: 15
+ID do Carrinho: 16
+ID do Carrinho: 17
+ID do Carrinho: 18
