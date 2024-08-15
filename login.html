@@ -1,56 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="./css/login.css"/>
-    <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
+
+    <script
+      src="https://kit.fontawesome.com/cf6fa412bd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="container">
-        <div class="buttonsForm">
-            <div class="btnColor"></div>
-            <button id="btnSignin">Sign in</button>
-            <button id="btnSignup">Sign up</button>
+      <div class="buttonsForm">
+        <div class="btnColor"></div>
+        <button id="btnSignin">Sign in</button>
+        <button id="btnSignup">Sign up</button>
+      </div>
+
+      <form id="signin" onsubmit="logar(event)">
+        <input
+          type="text"
+          id="loginEmail"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <i class="fas fa-envelope iEmail"></i>
+        <input
+          type="password"
+          id="loginPassword"
+          name="senha"
+          placeholder="Senha"
+          required
+        />
+        <i class="fas fa-lock iPassword"></i>
+        <div class="divCheck">
+          <input type="checkbox" />
+          <span>Lembrar senha</span>
+          <button class="loginbutton" type="submit">Login</button>
         </div>
 
-        <form id="signin" onsubmit="logar(event)">
-            <input type="text" id="loginEmail" name="email" placeholder="Email" required autocomplete="username"/>
-            <i class="fas fa-envelope iEmail"></i>
-            <input type="password" id="loginPassword" name="senha" placeholder="Senha" required autocomplete="current-password"/>
-            <i class="fas fa-lock iPassword"></i>
-            <div class="divCheck">
-                <input type="checkbox" />
-                <span>Lembrar senha</span>
-                <button class="loginbutton" type="submit">Login</button>
-            </div>
-            <a href="#"><i class="fa fa-google" style="font-size: 25px"></i></a>
-        </form>
+        <a href="#"><i class="fa fa-google" style="font-size: 25px"></i></a>
+      </form>
 
-        <form id="signup" method="POST" action="./cadastrar.php">
-            <input type="text" id="signupNome" name="nome" placeholder="Nome" required autocomplete="name"/>
-            <i class="fas fa-user iNome"></i>
+      <form id="signup" method="POST" action="./cadastrar.php">
+        <input
+          type="text"
+          id="signupNome"
+          name="nome"
+          placeholder="Nome"
+          required
+        />
+        <i class="fas fa-user iNome"></i>
 
-            <input type="text" id="signupEmail" name="email" placeholder="Email" required autocomplete="username"/>
-            <i class="fas fa-envelope iEmail2"></i>
+        <input
+          type="text"
+          id="signupEmail"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <i class="fas fa-envelope iEmail2"></i>
 
-            <input type="password" id="signupPassword" name="senha" placeholder="Senha" required autocomplete="new-password"/>
-            <i class="fas fa-lock iPassword2"></i>
+        <input
+          type="password"
+          id="signupPassword"
+          name="senha"
+          placeholder="Senha"
+          required
+        />
+        <i class="fas fa-lock iPassword2"></i>
 
-            <input type="password" id="signupPasswordConfirm" name="senha_confirm" placeholder="Confirme a Senha" required autocomplete="new-password"/>
-            <i class="fas fa-lock iPassword3"></i>
+        <input
+          type="password"
+          id="signupPasswordConfirm"
+          name="senha_confirm"
+          placeholder="Confirme a Senha"
+          required
+        />
+        <i class="fas fa-lock iPassword3"></i>
 
-            <div class="divCheck">
-                <input type="checkbox" required />
-                <span>Termos</span>
-            </div>
-            
-            <button class="cadastrarbutton" type="submit">Cadastre-se</button>
-        </form>
+        <div class="divCheck">
+          <input type="checkbox" required />
+          <span>Termos</span>
+        </div>
+
+        <button class="cadastrarbutton" type="submit">Cadastre-se</button>
+      </form>
     </div>
 
     <script src="./js/login.js"></script>
-</body>
+  </body>
 </html>
