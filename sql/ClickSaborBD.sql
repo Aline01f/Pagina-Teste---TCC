@@ -58,6 +58,22 @@ INSERT INTO categorias (Nome) VALUES ('Salgados'), ('Bebidas'), ('Doces');
 
 -- ----------------------------------------------------------------------------------------------------------------------------------
 -- ----------------------------------------------------------------------------------------------------------------------------------
+
+-- Tabela para armazenar itens no carrinho
+CREATE TABLE carrinho (
+    CarrinhoID INT AUTO_INCREMENT PRIMARY KEY,
+    fk_ClienteID INT NOT NULL,
+    fk_ProdutoID VARCHAR(50) NOT NULL,
+    Quantidade INT NOT NULL,
+    FOREIGN KEY (fk_ClienteID) REFERENCES CadastroCliente (ClienteID),
+    FOREIGN KEY (fk_ProdutoID) REFERENCES produtos (id)
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
+  
+-- ----------------------------------------------------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------------------------------------------------
+
 -- AValiar Tabelas
 SELECT * FROM CadastroCliente;
 SELECT * FROM LoginCliente;

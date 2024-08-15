@@ -1,4 +1,5 @@
 <?php
+include 'verificar_login.php';
 header('Content-Type: application/json');
 
 // Configurações do banco de dados
