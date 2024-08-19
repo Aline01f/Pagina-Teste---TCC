@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         <img src="${imageUrl}" alt="${produto.nome}" width="250px" height="200px">
                         <h3>${produto.nome}</h3>
                         <span class="price">R$ ${parseFloat(produto.preco).toFixed(2)}</span>
-                        <div class="quantidade-control">
-                            <button class="diminui-quantidade">-</button>
-                            <span class="produto-quantidade">1</span>
-                            <button class="aumenta-quantity">+</button>
+                        <div class="quantity-control">
+                            <button class="decrease-quantity">-</button>
+                            <span class="product-quantity">1</span>
+                            <button class="increase-quantity">+</button>
                         </div>
                         ${botaoAdicionar}
                         ${mensagemEstoque}
@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error('Erro ao carregar produtos:', error));
 });
+
 
 // Função para verificar o login antes de adicionar ao carrinho
 function adicionarAoCarrinho(produtoId, quantidade) {
