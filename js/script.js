@@ -101,7 +101,11 @@ function adicionarAoCarrinho(produtoId, quantidade) {
         try {
             const data = JSON.parse(text);
             if (!data.success) {
-                exibirPopup(data.message, 'login.html');
+                if (data.requiresLogin) {
+                    exibirPopup(data.message, 'login.html');
+                } else {
+                    alert(data.message); // Mostra uma mensagem de alerta para erros que não exigem login
+                }
             } else {
                 alert(data.message);
             }
