@@ -12,3 +12,10 @@ ID do Carrinho: 28
 ID do Carrinho: 29
 ID do Carrinho: 30
 ID do Carrinho: 31
+ID do Carrinho: 32
+ID do Carrinho: 33
+ID do Carrinho: 34
+ID do Carrinho: 35
+ID do Carrinho: 36
+ID do Carrinho: 37
+ID do Carrinho: 38
