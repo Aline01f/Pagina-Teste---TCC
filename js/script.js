@@ -1,7 +1,10 @@
+// Função para alternar a exibição da barra de navegação
 document.getElementById('toggleButton').addEventListener('click', function() {
     var navbarLinks = document.getElementById('navbarLinks');
     navbarLinks.classList.toggle('active');
 });
+
+// Função para carregar os produtos ao carregar a página
 document.addEventListener("DOMContentLoaded", function () {
     fetch('get_produtos.php')
         .then(response => response.text())
@@ -33,6 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         <img src="${imageUrl}" alt="${produto.nome}" width="250px" height="200px">
                         <h3>${produto.nome}</h3>
                         <span class="price">R$ ${parseFloat(produto.preco).toFixed(2)}</span>
+                        <div class="quantidade-control">
+                            <button class="diminui-quantidade">-</button>
+                            <span class="produto-quantidade">1</span>
+                            <button class="aumenta-quantity">+</button>
+                        </div>
                         ${botaoAdicionar}
                         ${mensagemEstoque}
                     `;
@@ -42,12 +50,32 @@ document.addEventListener("DOMContentLoaded", function () {
                         categorias[categoria].appendChild(produtoDiv);
                     }
 
-                    // Adicionar evento de clique ao botão, se ele existir
+                    // Adicionar eventos para os botões de aumentar e diminuir
+                    const decreaseButton = produtoDiv.querySelector('.decrease-quantity');
+                    const increaseButton = produtoDiv.querySelector('.increase-quantity');
+                    const quantityDisplay = produtoDiv.querySelector('.product-quantity');
+
+                    decreaseButton.addEventListener('click', function () {
+                        let quantity = parseInt(quantityDisplay.textContent);
+                        if (quantity > 1) {
+                            quantity--;
+                            quantityDisplay.textContent = quantity;
+                        }
+                    });
+
+                    increaseButton.addEventListener('click', function () {
+                        let quantity = parseInt(quantityDisplay.textContent);
+                        quantity++;
+                        quantityDisplay.textContent = quantity;
+                    });
+
+                    // Adicionar evento de clique ao botão "Adicionar ao Carrinho"
                     const botao = produtoDiv.querySelector('.add-to-cart');
                     if (botao) {
                         botao.addEventListener('click', function () {
                             const produtoId = this.getAttribute('data-id');
-                            adicionarAoCarrinho(produtoId, 1); // Adiciona 1 item ao carrinho
+                            const quantidade = parseInt(quantityDisplay.textContent);
+                            adicionarAoCarrinho(produtoId, quantidade);
                         });
                     }
                 });
@@ -57,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error('Erro ao carregar produtos:', error));
 });
-
 
 // Função para verificar o login antes de adicionar ao carrinho
 function adicionarAoCarrinho(produtoId, quantidade) {
@@ -84,7 +111,7 @@ function adicionarAoCarrinho(produtoId, quantidade) {
     .catch(error => console.error('Erro ao adicionar ao carrinho:', error));
 }
 
-
+// Função para exibir o pop-up de login
 function exibirPopup(mensagem, link) {
     // Cria o elemento de overlay
     const overlay = document.createElement('div');
@@ -124,6 +151,7 @@ function exibirPopup(mensagem, link) {
     botaoLogin.style.textDecoration = 'none';
     botaoLogin.style.borderRadius = '5px';
     popup.appendChild(botaoLogin);
+
     // Adiciona o conteúdo ao overlay
     overlay.appendChild(popup);
 
@@ -137,6 +165,7 @@ function exibirPopup(mensagem, link) {
         }
     });
 }
+
 
 
 
