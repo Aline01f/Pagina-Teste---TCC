@@ -19,3 +19,6 @@ ID do Carrinho: 35
 ID do Carrinho: 36
 ID do Carrinho: 37
 ID do Carrinho: 38
+ID do Carrinho: 39
+ID do Carrinho: 40
+ID do Carrinho: 1
