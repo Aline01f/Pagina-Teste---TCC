@@ -68,11 +68,12 @@ function cadastrar(event) {
   xhr.open("POST", "../cadastrar.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      var response = xhr.responseText.trim();
-      alert(response);
-      if (response === "Cadastro realizado com sucesso!") {
-        window.location.href = "login.html";
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        var response = xhr.responseText.trim();
+        alert(response); // Mostra a mensagem retornada pelo servidor
+      } else {
+        alert("Erro ao tentar cadastrar.");
       }
     }
   };
@@ -80,3 +81,7 @@ function cadastrar(event) {
            "&email=" + encodeURIComponent(email) +
            "&senha=" + encodeURIComponent(senha));
 }
+
+
+
+

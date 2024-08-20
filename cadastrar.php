@@ -26,12 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         $cliente_id = $stmt->insert_id;
         $hash_senha = password_hash($senha, PASSWORD_DEFAULT);
-
+    
         $stmt = $conn->prepare("INSERT INTO LoginCliente (fk_ClienteID, Senha) VALUES (?, ?)");
         $stmt->bind_param("is", $cliente_id, $hash_senha);
-
+    
         if ($stmt->execute()) {
-            echo "Cadastro realizado com sucesso!";
+            // Redirecionar para a página de login após o cadastro
+            header("Location: login.html"); // Redireciona para a página de login
+            exit; // Certifique-se de sair após o redirecionamento
         } else {
             echo "Erro ao salvar os dados de login: " . $stmt->error;
         }
@@ -43,5 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+
+
 
 
