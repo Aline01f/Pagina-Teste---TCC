@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="./css/perfil.css">
+    <!-- Adicione o link para os ícones (usando FontAwesome como exemplo) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <img src="./img/CLICKSABORbranco.png" width="200px" height="auto" alt="Logo">
+            <h1>Perfil do Usuário</h1>
+            <nav>
+                <ul>
+                    <li><a href="./home.html">Início</a></li>
+                    <li><a href="./carrinho.html">Carrinho</a></li>
+                    <li><a href="./loading.html">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="perfil">
+            <h2>Bem-vindo, [Nome do Usuário]</h2>
+
+            <div class="perfil-imagem">
+                <img src="./img/CLICKSABOR-3.png" alt="Imagem do Usuário">
+                <div class="editar-imagem">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+            </div>
+
+            <div class="perfil-dados">
+                <form action="#" method="POST">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" value="Nome do Usuário">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="email@exemplo.com">
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" value="senha123">
+
+                    <button class="botao" type="submit">Salvar Alterações</button>
+                </form>
+
+                <button class="botao excluir-conta">Excluir Conta</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="./img/CLICKSABOR-2.png" alt="Logo" class="footer-logo" />
+            </div>
+            <div class="footer-center">
+                <p>© 2024 Click Sabor. Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://wa.me/1234567890" target="_blank" class="social-icon">
+                    <i class="bx bxl-whatsapp"></i>
+                </a>
+                <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

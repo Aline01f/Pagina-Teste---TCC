@@ -265,7 +265,7 @@ header {
 height: 20px;
     width: 250px;
 }
-/* Estilos do rodapé */
+
 footer {
     background-color: #e9d5ff; /* Lilás claro */
     color: #333; /* Cor do texto */
@@ -298,7 +298,7 @@ footer {
   }
   
   .footer-logo {
-    height: 100px; /* Ajuste a altura da logo conforme necessário */
+    height: 100px; 
     width: auto;
     margin-right: 1rem;
   }
@@ -312,11 +312,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .certification {
-    font-size: 18px;
-    font-weight: 500;
   }
   
   .footer-right {
