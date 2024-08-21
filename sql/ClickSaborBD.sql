@@ -73,9 +73,40 @@ CREATE TABLE carrinho (
   
 -- ----------------------------------------------------------------------------------------------------------------------------------
 -- ----------------------------------------------------------------------------------------------------------------------------------
+-- Controle dos pedidos
+-- Tabela para armazenar os pedidos
+CREATE TABLE pedidos (
+    PedidoID INT AUTO_INCREMENT PRIMARY KEY,
+    fk_ClienteID INT NOT NULL,
+    DataPedido DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    StatusPedido VARCHAR(50) NOT NULL DEFAULT 'Pendente',
+    ValorTotal DECIMAL(10, 2) NOT NULL,
+    MetodoPagamento VARCHAR(100) NOT NULL,
+    EnderecoEntrega TEXT NOT NULL,
+    FOREIGN KEY (fk_ClienteID) REFERENCES CadastroCliente(ClienteID)
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
+
+-- Tabela para armazenar os itens de cada pedido
+CREATE TABLE pedido_itens (
+    PedidoItemID INT AUTO_INCREMENT PRIMARY KEY,
+    fk_PedidoID INT NOT NULL,
+    fk_ProdutoID VARCHAR(50) NOT NULL,
+    Quantidade INT NOT NULL,
+    PrecoUnitario DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (fk_PedidoID) REFERENCES pedidos(PedidoID),
+    FOREIGN KEY (fk_ProdutoID) REFERENCES produtos(id)
+) ENGINE=InnoDB
+  DEFAULT CHARSET=utf8mb4
+  COLLATE=utf8mb4_unicode_ci;
+
+-- ----------------------------------------------------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------------------------------------------------
 
 -- AValiar Tabelas
 SELECT * FROM CadastroCliente;
 SELECT * FROM LoginCliente;
 SELECT * FROM categorias;
 SELECT * FROM produtos;
+SELECT * FROM pedido_itens;
