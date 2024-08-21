@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Usuário</title>
-    <link rel="stylesheet" href="./css/perfil.css">
+    <title>Editar perfil</title>
+    <link rel="stylesheet" href="./css/perfiledit.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -32,20 +32,29 @@
     <div class="container">
         <div class="perfil">
             <h2>Bem-vindo, [Nome do Usuário]</h2>
+
             <div class="perfil-imagem">
-                <img src="./img/CLICKSABOR-2.png" alt="Foto do Usuário">
+                <img src="./img/CLICKSABOR-3.png" alt="Imagem do Usuário">
+                <div class="editar-imagem">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
             </div>
 
             <div class="perfil-dados">
-                <div class="perfil-item">
+                <form action="#" method="POST">
                     <label for="nome">Nome:</label>
-                    <p id="nome">Nome do Usuário</p>
-                </div>
-                <div class="perfil-item">
+                    <input type="text" id="nome" name="nome" value="Nome do Usuário">
+
                     <label for="email">Email:</label>
-                    <p id="email">email@exemplo.com</p>
-                </div>
-                <button class="botao editar-perfil">Editar Perfil</button>
+                    <input type="email" id="email" name="email" value="email@exemplo.com">
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" value="senha123">
+
+                    <button class="botao" type="submit">Salvar Alterações</button>
+                </form>
+
+                <button class="botao excluir-conta">Excluir Conta</button>
             </div>
         </div>
     </div>
@@ -69,11 +78,6 @@
         </div>
     </footer>
 
-    <script>
-    document.getElementById('toggleButton').addEventListener('click', function() {
-        var navMenu = document.getElementById('navMenu');
-        navMenu.classList.toggle('active');
-    });
-    </script>
+    <script src="./js/perfiledit.js"></script>
 </body>
 </html>
