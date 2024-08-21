@@ -76,7 +76,7 @@ table thead tr {
 }
 
 table thead tr th {
-  text-align: left;
+  text-align: center;
   padding-bottom: 10px;
   text-transform: uppercase;
   color: #666;
@@ -93,6 +93,7 @@ table tbody tr:last-child {
 
 table tbody tr td {
   padding: 15px 0;
+  text-align: center;
 }
 
 #cart-summary {

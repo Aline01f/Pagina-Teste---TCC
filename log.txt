@@ -22,3 +22,5 @@ ID do Carrinho: 38
 ID do Carrinho: 39
 ID do Carrinho: 40
 ID do Carrinho: 1
+ID do Carrinho: 2
+ID do Carrinho: 5

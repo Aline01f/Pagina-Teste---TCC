@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Click Sabor | Payment</title>
-    <link rel="stylesheet" href="./css/payment.css" />
+    <link rel="stylesheet" href="./css/pagamento.css" />
     <link
       rel="shortcut icon"
       href="/assets/img/favicon.ico"
@@ -21,7 +21,7 @@
     <div class="container">
       <div class="title">
         <h1 class="title-text">Finalizar Compra</h1>
-        <span>(3 produtos) R$ 14,50</span>
+        <span id="valor-total">(0 produtos) R$ 0,00</span>
       </div>
       <main>
         <div class="method-payment">
@@ -111,32 +111,13 @@
           <div id="request">detalhes do pedido</div>
           <div id="edit"><a href="/carrinho.html">editar</a></div>
         </div>
-        <div class="request-info">
-          <img class="img-request" src="./img/coxinha.png" />
-          <div class="request-info-text">
-            <strong>Coxinha de Frango</strong><br />R$4,99 <br />
-            Quantidade: 1
-          </div>
-        </div>
-        <div class="request-info">
-          <img class="img-request" src="./img/kapo.png" />
-          <div class="request-info-text">
-            <strong>Suco Kapo</strong><br />R$5,50 <br />
-            Quantidade: 1
-          </div>
-        </div>
-        <div class="request-info">
-          <img class="img-request" src="./img/empada.png" />
-          <div class="request-info-text">
-            <strong>Empada de Frango</strong><br />R$4,50 <br />
-            Quantidade: 1
-          </div>
-        </div>
+        <!-- Os detalhes do pedido serão inseridos aqui dinamicamente -->
       </div>
 
       <button id="checkout">Finalizar Pedido</button>
     </div>
 
-    <script src="./js/payment.js"></script>
+    <script src="./js/pagamento.js"></script>
   </body>
 </html>
+

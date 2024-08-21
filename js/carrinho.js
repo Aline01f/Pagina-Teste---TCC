@@ -84,6 +84,28 @@ function removerDoCarrinho(carrinho_id) {
     .catch(error => console.error('Erro ao remover item do carrinho:', error));
 }
 
+document.getElementById('checkout').addEventListener('click', function () {
+    finalizarCompra();
+});
+
+function finalizarCompra() {
+    fetch('finalizar_compra.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'finalizar_compra' })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Compra finalizada com sucesso!');
+            window.location.href = 'pagamento.html';  // Redireciona para a página de pagamento
+        } else {
+            alert('Erro ao finalizar a compra: ' + data.message);
+        }
+    })
+    .catch(error => console.error('Erro ao finalizar a compra:', error));
+}
+
 
 
 
