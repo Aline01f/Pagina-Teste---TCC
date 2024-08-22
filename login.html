@@ -16,84 +16,84 @@
   <body>
     <img src="./img/CLICKSABORbranco.png" alt="Logo: ClickSabor" class="logo">
     <div class="container">
-      <div class="buttonsForm">
-        <div class="btnColor"></div>
-        <button id="btnSignin">Sign in</button>
-        <button id="btnSignup">Sign up</button>
+      <div class="botoesFormulario">
+        <div class="corBotao"></div>
+        <button id="btnEntrar">Entrar</button>
+        <button id="btnCadastrar">Cadastrar</button>
       </div>
-
-      <form id="signin" onsubmit="logar(event)">
+      <form id="formEntrar" onsubmit="logar(event)">
         <input
           type="text"
-          id="loginEmail"
+          id="emailEntrar"
           name="email"
           placeholder="Email"
           required
         />
-        <i class="fas fa-envelope iEmail"></i>
+        <i class="fas fa-envelope iconeEmail"></i>
         <input
           type="password"
-          id="loginPassword"
+          id="senhaEntrar"
           name="senha"
           placeholder="Senha"
           required
         />
-        <i class="fas fa-lock iPassword"></i>
-        <div class="divCheck">
+        <i class="fas fa-lock iconeSenha"></i>
+        <div class="divCheckbox">
           <input type="checkbox" />
           <span>Lembrar senha</span>
-          <button class="loginbutton" type="submit">Login</button>
+          <button class="botaoEntrar" type="submit">Login</button>
         </div>
 
         <a href="#"><i class="fa fa-google" style="font-size: 25px"></i></a>
       </form>
 
-      <form id="signup" method="POST" action="./cadastrar.php">
+      <form id="formCadastrar" method="POST" action="./cadastrar.php">
         <input
           type="text"
-          id="signupNome"
+          id="nomeCadastrar"
           name="nome"
           placeholder="Nome"
           required
         />
-        <i class="fas fa-user iNome"></i>
+        <i class="fas fa-user iconeNome"></i>
 
         <input
           type="text"
-          id="signupEmail"
+          id="emailCadastrar"
           name="email"
           placeholder="Email"
           required
         />
-        <i class="fas fa-envelope iEmail2"></i>
+        <i class="fas fa-envelope iconeEmail2"></i>
 
         <input
           type="password"
-          id="signupPassword"
+          id="senhaCadastrar"
           name="senha"
           placeholder="Senha"
           required
         />
-        <i class="fas fa-lock iPassword2"></i>
+        <i class="fas fa-lock iconeSenha2"></i>
 
         <input
           type="password"
-          id="signupPasswordConfirm"
+          id="confirmarSenhaCadastrar"
           name="senha_confirm"
           placeholder="Confirme a Senha"
           required
         />
-        <i class="fas fa-lock iPassword3"></i>
+        <i class="fas fa-lock iconeSenha3"></i>
 
-        <div class="divCheck">
+        <div class="divCheckbox">
           <input type="checkbox" required />
           <span>Termos</span>
         </div>
 
-        <button class="cadastrarbutton" type="submit">Cadastre-se</button>
+        <button class="botaoCadastrar" type="submit">Cadastrar</button>
       </form>
     </div>
 
     <script src="./js/login.js"></script>
   </body>
 </html>
+
