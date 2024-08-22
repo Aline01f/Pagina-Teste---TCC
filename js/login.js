@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var formEntrar = document.querySelector('#formEntrar');
-  var formCadastrar = document.querySelector('#formCadastrar');
-  var corBotao = document.querySelector('.corBotao');
+  var formSignin = document.querySelector('#signin');
+  var formSignup = document.querySelector('#signup');
+  var btnColor = document.querySelector('.btnColor');
 
-  document.querySelector('#btnEntrar')
+  document.querySelector('#btnSignin')
     .addEventListener('click', () => {
-      formEntrar.style.left = "25px";
-      formCadastrar.style.left = "450px";
-      corBotao.style.left = "0px";
+      formSignin.style.left = "25px";
+      formSignup.style.left = "450px";
+      btnColor.style.left = "0px";
   });
 
-  document.querySelector('#btnCadastrar')
+  document.querySelector('#btnSignup')
     .addEventListener('click', () => {
-      formEntrar.style.left = "-450px";
-      formCadastrar.style.left = "25px";
-      corBotao.style.left = "110px";
+      formSignin.style.left = "-450px";
+      formSignup.style.left = "25px";
+      btnColor.style.left = "110px";
   });
 });
 
@@ -22,8 +22,8 @@ function logar(event) {
   console.log("Função logar chamada"); // Adicione esta linha
   event.preventDefault();
 
-  var email = document.getElementById('emailEntrar').value;
-  var senha = document.getElementById('senhaEntrar').value;
+  var email = document.getElementById('loginEmail').value;
+  var senha = document.getElementById('loginPassword').value;
 
   var xhr = new XMLHttpRequest();
   xhr.open("POST", "login.php", true);
@@ -33,7 +33,7 @@ function logar(event) {
     if (xhr.status === 200) {
       try {
         var response = JSON.parse(xhr.responseText.trim());
-        console.log(response); // Adicione esta linha para verificar a resposta
+        console.log(response); 
         if (response.success) {
           window.location.href = "loading.html";
         } else {
@@ -50,13 +50,14 @@ function logar(event) {
   xhr.send("email=" + encodeURIComponent(email) + "&senha=" + encodeURIComponent(senha));
 }
 
+
 function cadastrar(event) {
   event.preventDefault();
 
-  var nome = document.getElementById('nomeCadastrar').value;
-  var email = document.getElementById('emailCadastrar').value;
-  var senha = document.getElementById('senhaCadastrar').value;
-  var senhaConfirmacao = document.getElementById('confirmarSenhaCadastrar').value;
+  var nome = document.getElementById('signupNome').value;
+  var email = document.getElementById('signupEmail').value;
+  var senha = document.getElementById('signupPassword').value;
+  var senhaConfirmacao = document.getElementById('signupPasswordConfirm').value;
 
   if (senha !== senhaConfirmacao) {
     alert("As senhas não coincidem.");
@@ -80,7 +81,6 @@ function cadastrar(event) {
            "&email=" + encodeURIComponent(email) +
            "&senha=" + encodeURIComponent(senha));
 }
-
 
 
 
