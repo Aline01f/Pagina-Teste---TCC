@@ -74,7 +74,8 @@ header {
 
 .perfil {
     background-color: #fff;
-    padding: 20px;
+    width: auto;
+    height: 650px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
@@ -85,6 +86,7 @@ header {
     font-size: 24px;
     margin-bottom: 20px;
     color: #562be9;
+    
 }
 .perfil-imagem {
     display: flex;
