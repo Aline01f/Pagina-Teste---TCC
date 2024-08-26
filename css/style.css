@@ -29,7 +29,13 @@ header {
     padding: 0 1rem;
 }
 
-
+.logo-navbar{
+    justify-self: center;
+    width: 200px;
+    height: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
 
 .navbar-links ul {
     display: flex;
