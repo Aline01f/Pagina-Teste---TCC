@@ -25,3 +25,15 @@ ID do Carrinho: 1
 ID do Carrinho: 2
 ID do Carrinho: 5
 ID do Carrinho: 6
+ID do Carrinho: 14
+ID do Carrinho: 15
+ID do Carrinho: 16
+ID do Carrinho: 17
+ID do Carrinho: 18
+ID do Carrinho: 21
+ID do Carrinho: 20
+ID do Carrinho: 19
+ID do Carrinho: 22
+ID do Carrinho: 23
+ID do Carrinho: 24
+ID do Carrinho: 25
