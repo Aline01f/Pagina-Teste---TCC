@@ -143,4 +143,44 @@ footer {
   }
 
 
-  
+  header {
+    background: linear-gradient(
+        90deg,
+        rgba(86, 179, 233, 1) 16%,
+        rgba(131, 42, 233, 1) 75%
+      );
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo-navbar{
+    justify-self: center;
+    width: 200px;
+    height: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.navbar-links ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-links li {
+    margin-left: 1.0rem;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
