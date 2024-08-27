@@ -33,7 +33,7 @@ function logar(event) {
     if (xhr.status === 200) {
       try {
         var response = JSON.parse(xhr.responseText.trim());
-        console.log(response); // Adicione esta linha para verificar a resposta
+        console.log(response); 
         if (response.success) {
           window.location.href = "loading.html";
         } else {

@@ -29,7 +29,13 @@ header {
     padding: 0 1rem;
 }
 
-
+.logo-navbar{
+    justify-self: center;
+    width: 200px;
+    height: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
 
 .navbar-links ul {
     display: flex;
@@ -269,7 +275,6 @@ footer {
     text-align: center;
    
     width: 100%;
-    margin-top: 10%;
     display: flex;
     flex-direction: column;
     min-height: 10vh;
@@ -334,7 +339,6 @@ footer {
       text-align: center;
      
       width: 100%;
-      margin-top: 80%;
       display: flex;
       flex-direction: column;
       min-height: 10vh;

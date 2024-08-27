@@ -4,46 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar perfil</title>
-    <link rel="stylesheet" href="./css/perfiledit.css">
+    <link rel="stylesheet" href="./css/editar_perfil.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link
-    rel="shortcut icon"
-    href="./img/CLICKSABOR-3.png"
-    type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./img/CLICKSABOR-3.png"type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <title>Editar perfil</title>
 </head>
 <body>
 
     <header>
-        <div class="container">
+        <nav class="navbar">
             <img src="./img/CLICKSABORbranco.png" width="200px" height="auto" alt="Logo">
-            <nav>
-                <button class="toggle-button" id="toggleButton">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-                <div class="nav_Menu" id="navMenu">
-                    <ul>
-                        <li><a href="./home.html">Início</a></li>
-                        <li><a href="./carrinho.html">Carrinho</a></li>
-                        <li><a href="./login.html">Sair</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
+            <button class="toggle-button" id="toggleButton">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="navbar-links" id="navbarLinks">
+                <ul>
+                    <li><a href="./perfil.html"><i class="fas fa-arrow-left"></i></a></li>
+                    <li><a href="/home.html" class="home-icon"><i class="fas fa-home"></i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>   
 
     <div class="container">
         <div class="perfil">
-            <h2>Bem-vindo, [Nome do Usuário]</h2>
+            <h2>Bem-vindo, <span id="nomeUsuario">[Nome do Usuário]</span></h2>
 
-            <div class="perfil-imagem">
-                <img src="./img/CLICKSABOR-3.png" alt="Imagem do Usuário">
-                <div class="editar-imagem">
-                    <i class="fas fa-pencil-alt"></i>
-                </div>
-            </div>
 
             <div class="perfil-dados">
                 <form action="#" method="POST">
@@ -56,7 +45,7 @@
                     <label for="senha">Senha:</label>
                     <input type="password" id="senha" name="senha" value="senha123">
 
-                    <a href="./perfil.html"><button class="botao" type="submit">Salvar Alterações</button></a>
+                    <button class="botao" type="submit">Salvar Alterações</button>
                 </form>
 
                 <button class="botao excluir-conta">Excluir Conta</button>
@@ -83,6 +72,6 @@
         </div>
     </footer>
 
-    <script src="./js/perfiledit.js"></script>
+    <script src="./js/editar_perfil.js"></script>
 </body>
 </html>

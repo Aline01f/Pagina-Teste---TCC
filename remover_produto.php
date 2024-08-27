@@ -1,6 +1,15 @@
 <?php
+
+$servername = "localhost"; // ou o nome do seu servidor
+$username = "root";
+$password = "";
+$dbname = "ClickSaborBD";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
 include 'verificar_login.php';
 header('Content-Type: application/json');
+
+
 
 if (!isset($_SESSION['cliente_id'])) {
     echo json_encode(['success' => false, 'message' => 'Usuário não logado.']);

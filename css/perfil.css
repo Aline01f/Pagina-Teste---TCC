@@ -19,65 +19,77 @@ body {
 }
 
 header {
-    background: linear-gradient(90deg, rgba(86, 179, 233, 1) 16%, rgba(131, 42, 233, 1) 75%);
+    background: linear-gradient(
+        90deg,
+        rgba(86, 179, 233, 1) 16%,
+        rgba(131, 42, 233, 1) 75%
+      );
     color: #fff;
-    padding: 10px 0;
+    padding: 1rem 0;
 }
 
-header .container {
+.navbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-
-header img {
-    height: auto;
-}
-
-nav {
-    display: flex;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-nav ul {
-    list-style-type: none;
+
+
+.navbar-links ul {
     display: flex;
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
-nav ul li {
-    margin-right: 20px; /* Corrigido de 2 para 20px */
+.navbar-links li {
+    margin-left: 1.5rem;
 }
 
-nav ul li a {
-    color: #fff;
+.navbar-links a {
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
+    color: #fff;
+    font-size: 1rem;
 }
 
-nav ul li a:hover {
-    color: #ff69b4;
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.nav-menu {
-    display: flex;
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
 }
 
 .perfil {
     background-color: #fff;
-    padding: 20px;
+    width: auto;
+    height: 650px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
 }
 
 .perfil h2 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #562be9;
+    
 }
 .perfil-imagem {
     display: flex;
@@ -114,24 +126,6 @@ nav ul li a:hover {
     border-radius: 6px;
     border: 1px solid #562be9;
     color: #333;
-}
-
-.toggle-button {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 10px;
 }
 
 .botao {
@@ -213,22 +207,24 @@ footer {
     .toggle-button {
         display: flex;
     }
-  
-    .nav-menu {
+
+    .navbar-links {
         display: none;
-        width: 100%;
-        text-align: center;
     }
-  
-    .nav-menu.active {
-        display: block;
+
+    .navbar-links ul {
+        flex-direction: column;
+        align-items: center;
+        
     }
-  
-    .nav-menu ul {
-        display: block;
+
+    .navbar-links li {
+        margin: 0.5rem 0;
     }
-  
-    .nav-menu ul li {
-        margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .navbar-links.active {
+        display: flex;
     }
 }
