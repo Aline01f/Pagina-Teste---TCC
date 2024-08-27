@@ -97,9 +97,9 @@ header {
     justify-content: center;
 }
 
-.perfil-imagem img {
-    width: 150px;
-    height: 140px;
+.logo-clicksabor img {
+    width: 170px;
+    height: auto;
     border-radius: 50%;
     margin-right: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
