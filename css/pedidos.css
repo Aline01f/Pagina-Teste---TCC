@@ -20,7 +20,8 @@ header {
 
 header h1 {
   text-align: center;
-  margin: 0; /* Remove as margens padrão */
+  margin: 0 auto; /* Remove as margens padrão */
+  
 }
 
 
