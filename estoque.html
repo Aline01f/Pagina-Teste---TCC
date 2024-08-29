@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/estoque.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -17,13 +18,20 @@
         <img src="/img/CLICKSABORbranco.png" />
       </div>
       <h1 class="title">Administração</h1>
+      <div class="navbar-links" id="navbarLinks">
+        <ul>
+            <li><a href="./carrinho.html" class="cart-icon"><i class="bi bi-cart3"></i></a></li>
+            <li><a href="./perfil.html" class="profile-icon"><i class="bi bi-person-circle"></i></a></li> 
+            <li><a href="./login.html">Sair</a></li>
+        </ul>
+    </div>
     </header>
     
 
     <!-- Página de Administração de Estoque -->
     <div class="container">
       <aside>
-        <div class="estoque-btn"><button>Estoque</button></div>
+        <div class="estoque-btn"><button><a href="/gerenciar_pedidos.html">Estoque</a></button></div>
         <div class="pedidos-btn">
           <button><a href="/gerenciar_pedidos.html">Pedidos</a></button>
         </div>

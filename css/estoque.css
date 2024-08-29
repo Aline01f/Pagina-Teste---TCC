@@ -34,11 +34,43 @@ header {
   color: #ffffff;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo-navbar{
+  justify-self: center;
+  width: 200px;
+  height: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.navbar-links ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin-left: 1.0rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+
 .container {
   display: flex;
   margin: 30px;
-  margin-top: 15px;
-  padding: 25px;
+  padding: 25px 40px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -98,7 +130,7 @@ button {
 
 .admin-container {
   border-left: 3px solid rgb(168, 168, 168);
-  padding-left: 3rem;
+  padding-left: 8rem;
 }
 
 .form-group {
@@ -106,8 +138,11 @@ button {
 }
 
 h3 {
+  text-align: center;
   font-size: 1.5rem;
+  padding: 10px;
   margin-bottom: 1rem;
+  background-color: #ebebeb;
 }
 
 .form-group label {
@@ -231,9 +266,9 @@ td img {
 
 button {
   border-radius: 10px;
-  padding: 15px;
-  font-size: 18px;
-  font-weight: 600;
+  padding: 18px;
+  font-size: 20px;
+  font-weight: 700;
   background-color: #dedede;
   border: none;
   cursor: pointer;
@@ -253,9 +288,8 @@ aside {
   display: flex;
   flex-direction: column;
   width: 200px;
-  height: 100vh;
   gap: 10px;
-  margin-right: 25px;
+  margin-right: 3rem;
 }
 
 /* Estilos do rodapé */
@@ -337,5 +371,21 @@ footer {
     display: flex;
     flex-direction: column;
     min-height: 10vh;
+  }
+}
+
+@media (max-width: 1300px){
+  .admin-container{
+    border: none;
+    padding: 0;
+  }
+
+  .container{
+    display: block;
+  }
+
+  aside{
+    width: 100%;
+    margin-bottom: 40px;
   }
 }
