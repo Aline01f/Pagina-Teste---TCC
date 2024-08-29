@@ -13,7 +13,8 @@ body {
 
 header {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   height: 140px;
   background: linear-gradient(
     90deg,
@@ -25,27 +26,28 @@ header {
 
 .logo img {
   width: 200px;
-  display: flex;
-  justify-content: start;
 }
 
 .title {
-  display: flex;
-  align-items: center;
+  flex-grow: 1;
+  text-align: center;
+  color: #ffffff;
 }
 
 .container {
-    margin: 30px;
-    margin-top: 15px;
-  padding: 2rem;
+  display: flex;
+  margin: 30px;
+  margin-top: 15px;
+  padding: 25px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
-
+.conteudo {
+  display: flex;
+}
 h1 {
   text-align: center;
-  color: #ffffff;
 }
 
 table {
@@ -57,7 +59,7 @@ table {
 table,
 th,
 td {
-  border: 1px solid #ddd;
+  border: 3px solid #ffffff;
 }
 
 th,
@@ -68,10 +70,6 @@ td {
 
 th {
   background-color: #f4f4f4;
-}
-
-.form-group {
-  margin: 15px 0;
 }
 
 label {
@@ -87,21 +85,8 @@ button {
   margin-top: 5px;
 }
 
-button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #218838;
-}
-
 .admin-section {
   max-width: 1200px;
-  margin: 0 auto;
-
 }
 
 .admin-section h2 {
@@ -112,14 +97,15 @@ button:hover {
 }
 
 .admin-container {
-  margin-top: 1rem;
+  border-left: 3px solid rgb(168, 168, 168);
+  padding-left: 3rem;
 }
 
 .form-group {
   margin-bottom: 1.5rem;
 }
 
-.form-group h3 {
+h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -217,7 +203,7 @@ table {
 table,
 th,
 td {
-  border: 1px solid #ddd;
+  border: 3px solid #ffffff;
 }
 
 th,
@@ -243,26 +229,35 @@ td img {
   height: auto;
 }
 
-aside, .estoque-btn, .pedidos-btn{
-    padding: 5px;
+button {
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #dedede;
+  border: none;
+  cursor: pointer;
 }
 
-a{
-    text-decoration: none;
-    color: white;
+button:hover {
+  background-color: #ccc;
+  transition: 0.5s;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 aside {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100vh;
+  gap: 10px;
+  margin-right: 25px;
+}
 
-    width: 200px;
-    height: 100vh;
-    position: absolute;
-  }
-
-  .conteudo {
-    margin-left: 300px;
-    max-width: 1450px;
-  }
 /* Estilos do rodapé */
 footer {
   background-color: #e9d5ff; /* Lilás claro */

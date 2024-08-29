@@ -18,16 +18,35 @@
       </div>
       <h1 class="title">Administração</h1>
     </header>
+    
 
     <!-- Página de Administração de Estoque -->
     <div class="container">
       <aside>
         <div class="estoque-btn"><button>Estoque</button></div>
-        <div class="pedidos-btn"><button><a href="/gerenciar_pedidos.html">Pedidos</a></button></div>
+        <div class="pedidos-btn">
+          <button><a href="/gerenciar_pedidos.html">Pedidos</a></button>
+        </div>
       </aside>
-      <div class="conteudo">
         <section id="admin" class="admin-section">
           <div class="admin-container">
+            <h3>Produtos em Estoque</h3>
+            <table id="stockTable">
+              <thead>
+                <tr>
+                  <th>ID do Produto</th>
+                  <th>Nome do Produto</th>
+                  <th>Categoria</th>
+                  <th>Preço</th>
+                  <th>Quantidade</th>
+                  <th>Imagem</th>
+                  <th>Em Estoque</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Linhas de produtos serão inseridas aqui -->
+              </tbody>
+            </table>
             <!-- Formulário para Adicionar Produtos -->
             <div class="form-group">
               <h3>Adicionar Produto</h3>
@@ -163,23 +182,7 @@
                 </button>
               </form>
             </div>
-            <h3>Produtos em Estoque</h3>
-            <table id="stockTable">
-              <thead>
-                <tr>
-                  <th>ID do Produto</th>
-                  <th>Nome do Produto</th>
-                  <th>Categoria</th>
-                  <th>Preço</th>
-                  <th>Quantidade</th>
-                  <th>Imagem</th>
-                  <th>Em Estoque</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- Linhas de produtos serão inseridas aqui -->
-              </tbody>
-            </table>
+            
           </div>
         </section>
       </div>
