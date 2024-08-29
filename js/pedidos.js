@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch('gerenciar_pedidos.php')
             .then(response => response.json())
             .then(pedidos => {
-                const container = document.querySelector('.container');
+                const container = document.querySelector('.conteudo');
                 container.innerHTML = '<h2>Lista de Pedidos</h2>'; // Resetar a lista
 
                 pedidos.forEach(pedido => {

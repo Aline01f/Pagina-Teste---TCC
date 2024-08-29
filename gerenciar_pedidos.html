@@ -1,59 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/pedidos.css">
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/pedidos.css" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
     <title>Click Sabor</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="header">
-            <h1>Lanchonete - Gerenciamento de Pedidos</h1>
-        </div>
+      <div class="logo">
+        <img src="/img/CLICKSABORbranco.png" />
+      </div>
+      <h1 class="title">Administração</h1>
+      <div class="navbar-links" id="navbarLinks">
+        <ul>
+          <li>
+            <a href="./carrinho.html" class="cart-icon"
+              ><i class="bi bi-cart3"></i
+            ></a>
+          </li>
+          <li>
+            <a href="./perfil.html" class="profile-icon"
+              ><i class="bi bi-person-circle"></i
+            ></a>
+          </li>
+          <li><a href="./login.html">Sair</a></li>
+        </ul>
+      </div>
     </header>
-    <header>
-        <nav class="navbar">
-            <img src="./img/CLICKSABORbranco.png" alt="Logo" class="logo-navbar">
-            <div class="navbar-links" id="navbarLinks">
-                <ul>
-                    <li><a href="./carrinho.html" class="cart-icon"><i class="bi bi-cart3"></i></a></li>
-                    <li><a href="./perfil.html" class="profile-icon"><i class="bi bi-person-circle"></i></a></li> 
-                    <li><a href="./login.html">Sair</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class="container">
-            <h2>Lista de Pedidos</h2>
-            <div id="pedido-container">
-                <!-- Os pedidos serão carregados aqui pelo JavaScript -->
-            </div>
+    <div class="container">
+      <aside>
+        <div class="estoque-btn">
+          <button><a href="/estoque.html">Estoque</a></button>
         </div>
-    </main>
+        <div class="pedidos-btn">
+          <button><a href="">Pedidos</a></button>
+        </div>
+      </aside>
+      <div class="conteudo"></div>
+    </div>
     <footer>
-        <div class="footer-container">
-            <div class="footer-left">
-                <img src="./img/CLICKSABOR-2.png" alt="Logo" class="footer-logo" />
-            </div>
-            <div class="footer-center">
-                <p>© 2024 Click Sabor. Todos os direitos reservados.</p>
-            </div>
-            <div class="footer-right">
-                <a href="https://wa.me/1234567890" target="_blank" class="social-icon">
-                    <i class="bx bxl-whatsapp"></i>
-                </a>
-                <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon">
-                    <i class="bx bxl-instagram"></i>
-                </a>
-            </div>
+      <div class="footer-container">
+        <div class="footer-left">
+          <img src="/img/CLICKSABOR-2.png" alt="Logo" class="footer-logo" />
         </div>
+        <div class="footer-center">
+          <p>© 2024 Click Sabor. Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-right">
+          <a
+            href="https://wa.me/1234567890"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="bx bxl-whatsapp"></i>
+          </a>
+          <a
+            href="https://instagram.com/yourprofile"
+            target="_blank"
+            class="social-icon"
+          >
+            <i class="bx bxl-instagram"></i>
+          </a>
+        </div>
+      </div>
     </footer>
     <script src="./js/pedidos.js"></script>
-</body>
+  </body>
 </html>
-
