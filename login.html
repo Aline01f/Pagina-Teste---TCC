@@ -14,8 +14,8 @@
     ></script>
   </head>
   <body>
-    <img src="./img/CLICKSABORbranco.png" alt="Logo: ClickSabor" class="logo">
     <div class="container">
+      <img src="./img/CLICKSABOR-2.png" alt="Logo: ClickSabor" class="logo" />
       <div class="buttonsForm">
         <div class="btnColor"></div>
         <button id="btnSignin">Entrar</button>
@@ -40,8 +40,10 @@
         />
         <i class="fas fa-lock iPassword"></i>
         <div class="divCheck">
-          <input type="checkbox" />
-          <span>Lembrar senha</span>
+          <div class="lembrarsenha">
+            <input type="checkbox" />
+            <span style="padding-left: 5px">Lembrar senha</span>
+          </div>
           <button class="loginbutton" type="submit">Login</button>
         </div>
 
@@ -86,8 +88,15 @@
         <i class="fas fa-lock iPassword3"></i>
 
         <div class="divCheck">
-          <input type="checkbox" required />
-          <span>Termos</span>
+          <div class="lembrarsenha2">
+            <input type="checkbox" required />
+            <span
+              >Confirmo que li e aceito os
+              <span id="termos">termos</span>
+              e
+              <span id="termos">condições</span>.</span
+            >
+          </div>
         </div>
 
         <button class="cadastrarbutton" type="submit">Cadastre-se</button>

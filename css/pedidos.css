@@ -9,7 +9,6 @@
 
 body {
   background-color: #ececec;
-
 }
 
 header {
@@ -22,7 +21,7 @@ header {
     rgba(86, 179, 233, 1) 16%,
     rgba(131, 42, 233, 1) 75%
   );
-  padding: 1rem;
+  padding: 3rem;
 }
 
 .logo img {
@@ -44,7 +43,7 @@ header {
   padding: 0 1rem;
 }
 
-.logo-navbar{
+.logo-navbar {
   justify-self: center;
   width: 200px;
   height: auto;
@@ -58,7 +57,7 @@ header {
 }
 
 .navbar-links li {
-  margin-left: 1.0rem;
+  margin-left: 1rem;
 }
 
 .navbar-links a {
@@ -76,45 +75,51 @@ header {
   border-radius: 8px;
 }
 
- h2 {
+h2 {
   text-align: center;
   font-size: 1.5rem;
   padding: 10px;
   margin-bottom: 1rem;
-  background-color: #ebebeb;    
+  background-color: #ebebeb;
 }
 
 .pedido {
-    background: #ebebeb;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #ebebeb;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .status-button {
-    background: linear-gradient(90deg, rgba(86, 179, 233, 1) 16%, rgba(131, 42, 233, 1) 75%);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: background-color 0.3s ease;
-    font-weight: 500;
+  background: linear-gradient(
+    90deg,
+    rgba(86, 179, 233, 1) 16%,
+    rgba(131, 42, 233, 1) 75%
+  );
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
 }
 
 .status-button:hover {
-    background: linear-gradient(90deg, rgba(131, 42, 233, 1) 16%, rgba(86, 179, 233, 1) 75%);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 42, 233, 1) 16%,
+    rgba(86, 179, 233, 1) 75%
+  );
 }
 
 .status {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #333;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
 }
-
-
 
 .aside-btn {
   border-radius: 10px;
@@ -144,22 +149,22 @@ aside {
   margin-right: 3rem;
 }
 
-.conteudo{
+.conteudo {
   border-left: 3px solid rgb(168, 168, 168);
   padding-left: 8rem;
 }
 
-@media (max-width: 1300px){
-  .conteudo{
+@media (max-width: 1300px) {
+  .conteudo {
     border: none;
     padding: 0;
   }
-  
-  .container{
+
+  .container {
     display: block;
   }
-  
-  aside{
+
+  aside {
     width: 100%;
     margin-bottom: 40px;
   }
@@ -169,11 +174,13 @@ footer {
   background-color: #e9d5ff; /* Lilás claro */
   color: #333; /* Cor do texto */
   padding: 1rem 0;
+  width: 100vw;
   text-align: center;
-  margin-top: 10%;
   display: flex;
   flex-direction: column;
-  bottom:0%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .footer-container {

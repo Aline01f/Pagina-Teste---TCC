@@ -110,6 +110,27 @@
         <div class="request-title">
           <div id="request">detalhes do pedido</div>
         </div>
+        <div class="card">
+          <h2>Pedido #${data.PedidoID}</h2>
+          <p>
+            <strong>Data:</strong> ${new
+            Date(data.DataPedido).toLocaleDateString()} ${new
+            Date(data.DataPedido).toLocaleTimeString()}
+          </p>
+          <p><strong>Status:</strong> ${data.StatusPedido}</p>
+          <p><strong>Valor Total:</strong> R$ ${valorTotal.toFixed(2)}</p>
+          <p><strong>Método de Pagamento:</strong> ${data.MetodoPagamento}</p>
+          <p><strong>Endereço de Entrega:</strong> ${data.EnderecoEntrega}</p>
+          <h3>Itens do Pedido:</h3>
+          <ul>
+            ${itens.map(item => `
+            <li>
+              ${item.produtoNome} - Quantidade: ${item.Quantidade} - Preço
+              Unitário: R$ ${item.PrecoUnitario.toFixed(2)}
+            </li>
+            `).join('')}
+          </ul>
+        </div>
         <!-- Os detalhes do pedido serão inseridos aqui dinamicamente -->
       </div>
 
@@ -119,4 +140,3 @@
     <script src="./js/pagamento.js"></script>
   </body>
 </html>
-
