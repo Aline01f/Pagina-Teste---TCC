@@ -96,11 +96,11 @@
           </div>
           <div class="card" id="card3">
             <div class="card-header" onclick="toggleCard('card3')">
-              Boleto
-              <img src="./img/boleto.png" style="width: 84px" />
+              Dinheiro
+              <img src="./img/dinheiro.png" style="width: 58px" />
             </div>
             <div class="card-body">
-              <p>Informações sobre o boleto...</p>
+              <p>Informações sobre o pagamento...</p>
             </div>
           </div>
         </div>
@@ -111,27 +111,8 @@
           <div id="request">detalhes do pedido</div>
         </div>
         <div class="card">
-          <h2>Pedido #${data.PedidoID}</h2>
-          <p>
-            <strong>Data:</strong> ${new
-            Date(data.DataPedido).toLocaleDateString()} ${new
-            Date(data.DataPedido).toLocaleTimeString()}
-          </p>
-          <p><strong>Status:</strong> ${data.StatusPedido}</p>
-          <p><strong>Valor Total:</strong> R$ ${valorTotal.toFixed(2)}</p>
-          <p><strong>Método de Pagamento:</strong> ${data.MetodoPagamento}</p>
-          <p><strong>Endereço de Entrega:</strong> ${data.EnderecoEntrega}</p>
-          <h3>Itens do Pedido:</h3>
-          <ul>
-            ${itens.map(item => `
-            <li>
-              ${item.produtoNome} - Quantidade: ${item.Quantidade} - Preço
-              Unitário: R$ ${item.PrecoUnitario.toFixed(2)}
-            </li>
-            `).join('')}
-          </ul>
+          <!-- Os detalhes do pedido serão inseridos aqui dinamicamente -->
         </div>
-        <!-- Os detalhes do pedido serão inseridos aqui dinamicamente -->
       </div>
 
       <button id="checkout">Finalizar Pedido</button>

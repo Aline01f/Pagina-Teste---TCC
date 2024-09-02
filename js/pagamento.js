@@ -1,9 +1,10 @@
 function toggleCard(cardId) {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    if (card.id !== cardId) {
+    const cardBody = card.querySelector(".card-body");
+    if (card.id !== cardId && cardBody) {
       card.classList.remove("selected");
-      card.querySelector(".card-body").style.maxHeight = null;
+      cardBody.style.maxHeight = null;
     }
   });
 
