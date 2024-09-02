@@ -15,23 +15,25 @@ body {
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 140px;
   background: linear-gradient(
     90deg,
     rgba(86, 179, 233, 1) 16%,
     rgba(131, 42, 233, 1) 75%
   );
-  padding: 3rem;
+color: #fff;
+padding: 2rem ;
+display: flex;
+align-items: center;
+justify-content: space-between;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem
 }
 
 .logo-navbar {
@@ -61,7 +63,7 @@ header {
   height: 21px;
   background: transparent;
   border: none;
-  cursor: pointer;
+  cursor: crosshair;
 }
 
 .toggle-button .bar {
@@ -281,7 +283,6 @@ footer {
   text-align: center;
   display: flex;
   flex-direction: column;
-  position: absolute;
   bottom: 0;
   left: 0;
 }
