@@ -201,19 +201,23 @@ body > main .container aside {
   min-width: 250px;
 }
 
-.request {
-  max-width: 600px;
-}
 
 .request-info {
   margin-top: 15px;
-  display: flex;
-  align-items: center;
+
   background-color: #eeeeee;
   border-radius: 8px;
   padding: 7px;
 }
 
+p{
+  padding-left: 5px;
+}
+
+ul{
+  list-style: none;
+  padding-left: 5px;
+}
 .request-info-text {
   padding-left: 10px;
 }
