@@ -14,17 +14,25 @@ body {
   color: #333;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   background: linear-gradient(
     90deg,
     rgba(86, 179, 233, 1) 16%,
     rgba(131, 42, 233, 1) 75%
   );
-color: #fff;
-padding: 2rem ;
-display: flex;
-align-items: center;
-justify-content: space-between;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .navbar {
@@ -33,7 +41,7 @@ justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem
+  padding: 3rem;
 }
 
 .logo-navbar {
@@ -126,6 +134,10 @@ justify-content: space-between;
   color: #333;
   margin: 0.5rem 0;
   display: block;
+}
+
+main {
+  flex: 1;
 }
 
 .estoque-indisponivel {
@@ -276,15 +288,19 @@ justify-content: space-between;
 }
 
 footer {
-  background-color: #e9d5ff; /* Lilás claro */
-  color: #333; /* Cor do texto */
+  background: linear-gradient(
+    90deg,
+    rgba(86, 179, 233, 1) 16%,
+    rgba(131, 42, 233, 1) 75%
+  );
+  color: white; /* Cor do texto */
   padding: 1rem 0;
-  width: 100vw;
   text-align: center;
   display: flex;
   flex-direction: column;
   bottom: 0;
-  left: 0;
+  width: 100%; /* Garante que o footer ocupe toda a largura */
+  position: relative;
 }
 
 .footer-container {
@@ -339,17 +355,4 @@ footer {
 
 .social-icon:hover {
   color: #5b3a9b; /* Cor dos ícones ao passar o mouse */
-}
-@media (max-width: 1024px) {
-  footer {
-    background-color: #e9d5ff; /* Lilás claro */
-    color: #333; /* Cor do texto */
-    padding: 1rem 0;
-    text-align: center;
-
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 10vh;
-  }
 }

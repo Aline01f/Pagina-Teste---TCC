@@ -9,9 +9,17 @@
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: #ececec;
   color: #333;
   line-height: 1.6;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -62,6 +70,7 @@ main {
 }
 
 .content {
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -263,16 +272,20 @@ aside > button:hover {
 }
 /* Estilos do rodapé */
 footer {
-  background-color: #e9d5ff; /* Lilás claro */
-  color: #333; /* Cor do texto */
+  background: linear-gradient(
+    90deg,
+    rgba(86, 179, 233, 1) 16%,
+    rgba(131, 42, 233, 1) 75%
+  );
+  color: white; /* Cor do texto */
   padding: 1rem 0;
   text-align: center;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 10vh;
+  bottom: 0;
+  width: 100%; /* Garante que o footer ocupe toda a largura */
+  position: relative;
 }
-
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -282,7 +295,9 @@ footer {
   padding: 0 1rem;
 }
 
-.footer-left, .footer-center, .footer-right {
+.footer-left,
+.footer-center,
+.footer-right {
   flex: 1;
 }
 
@@ -323,18 +338,4 @@ footer {
 
 .social-icon:hover {
   color: #5b3a9b; /* Cor dos ícones ao passar o mouse */
-}
-@media(max-width: 1024px){
-  footer {
-    background-color: #e9d5ff; /* Lilás claro */
-    color: #333; /* Cor do texto */
-    padding: 1rem 0;
-    text-align: center;
-   
-    width: 100%;
-    margin-top: 30%;
-    display: flex;
-    flex-direction: column;
-    min-height: 10vh;
-  }
 }

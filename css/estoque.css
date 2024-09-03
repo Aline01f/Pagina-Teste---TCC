@@ -11,6 +11,14 @@ body {
   background-color: #ececec;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -43,7 +51,7 @@ header {
   padding: 0 1rem;
 }
 
-.logo-navbar{
+.logo-navbar {
   justify-self: center;
   width: 200px;
   height: auto;
@@ -57,7 +65,7 @@ header {
 }
 
 .navbar-links li {
-  margin-left: 1.0rem;
+  margin-left: 1rem;
 }
 
 .navbar-links a {
@@ -66,8 +74,8 @@ header {
   font-size: 1rem;
 }
 
-
 .container {
+  flex: 1;
   display: flex;
   margin: 30px;
   padding: 25px 40px;
@@ -292,85 +300,88 @@ aside {
   margin-right: 3rem;
 }
 
-
-@media (max-width: 1300px){
-  .admin-container{
+@media (max-width: 1300px) {
+  .admin-container {
     border: none;
     padding: 0;
   }
 
-  .container{
+  .container {
     display: block;
   }
-  
-  aside{
+
+  aside {
     width: 100%;
     margin-bottom: 40px;
   }
 }
 
-  /* Estilos do rodapé */
-  footer {
-    background-color: #e9d5ff; /* Lilás claro */
-    color: #333; /* Cor do texto */
-    padding: 1rem 0;
-    text-align: center;
-    margin-top: 10%;
-    display: flex;
-    flex-direction: column;
-    bottom:0%;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  .footer-left,
-  .footer-center,
-  .footer-right {
-    flex: 1;
-  }
-  
-  .footer-left {
-    display: flex;
-    align-items: center;
-  }
-  
-  .footer-logo {
-    height: 100px; /* Ajuste a altura da logo conforme necessário */
-    width: auto;
-    margin-right: 1rem;
-  }
-  
-  .footer-left p {
-    margin: 0;
-    font-size: 14px;
-  }
-  
-  .footer-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .footer-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  
-  .social-icon {
-    color: #333; /* Cor dos ícones */
-    font-size: 24px;
-    margin-left: 1rem;
-    transition: color 0.3s;
-  }
-  
-  .social-icon:hover {
-    color: #5b3a9b; /* Cor dos ícones ao passar o mouse */
-  }
+/* Estilos do rodapé */
+footer {
+  background: linear-gradient(
+    90deg,
+    rgba(86, 179, 233, 1) 16%,
+    rgba(131, 42, 233, 1) 75%
+  );
+  color: white; /* Cor do texto */
+  padding: 1rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%; /* Garante que o footer ocupe toda a largura */
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 200px;
+  margin-right: 1rem;
+}
+
+.footer-left p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.social-icon {
+  color: #333; /* Cor dos ícones */
+  font-size: 24px;
+  margin-left: 1rem;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #5b3a9b; /* Cor dos ícones ao passar o mouse */
+}
